@@ -1,0 +1,211 @@
+{
+  "app": {
+    "titulo": "Mobile TCC"
+  },
+  "home": {
+    "fotos": [
+      "assets/images/jogo_1.jpeg",
+      "assets/images/jogo_2.jpeg",
+      "assets/images/jogo_3.jpeg",
+      "assets/images/jogo_4.jpeg",
+      "assets/images/jogo_5.png",
+      "assets/images/jogo_6.png"
+    ],
+    "tituloDescubra": "DESCUBRA MAIS:",
+    "botoes": [
+      {
+        "rotulo": "EMPRESA",
+        "icone": "empresa",
+        "rota": "empresa"
+      },
+      {
+        "rotulo": "JOGO",
+        "icone": "jogo",
+        "rota": "jogo"
+      },
+      {
+        "rotulo": "EQUIPE",
+        "icone": "equipe",
+        "rota": "equipe"
+      },
+      {
+        "rotulo": "CRÉDITOS",
+        "icone": "creditos",
+        "rota": "creditos"
+      }
+    ]
+  },
+  
+
+  "empresa": {
+    "titulo": "EMPRESA",
+    "imagemHeader": "assets/images/header_empresa.png",
+    "secoes": [
+    {
+      "titulo": "QUEM SOMOS",
+      "texto": "Somos uma empresa de tecnologia especializada no desenvolvimento de soluções digitais, unindo engenharia de software, design e visão estratégica para transformar ideias em produtos funcionais e eficientes.\n\nFundada por Davi Okano, Lavinia, Guilherme e Filipe Ichiro, nossa equipe atua no desenvolvimento de plataformas, sistemas e aplicações personalizadas, além da criação de produtos digitais próprios, incluindo jogos e experiências interativas.\n\nNosso trabalho é guiado por três pilares: consistência, colaboração e aprendizado contínuo. Buscamos compreender as necessidades de cada cliente, desenvolver soluções adequadas aos seus objetivos e entregar resultados que combinem desempenho, usabilidade e qualidade técnica.\n\nMais do que prestar serviços de desenvolvimento, queremos construir parcerias duradouras e criar soluções digitais que gerem valor real.",
+      "imagem": "assets/images/empresa_quem_somos.jpeg"
+    },
+    {
+      "titulo": "NOSSA HISTÓRIA",
+      "texto": "Nossa história começou com a união de diferentes competências, ideias e perspectivas, conectadas por um objetivo em comum: desenvolver soluções tecnológicas capazes de transformar desafios em oportunidades.\n\nNos primeiros estágios, atuamos com uma estrutura enxuta, concentrando nossos esforços em projetos de desenvolvimento web e sistemas digitais de pequeno e médio porte. Essa fase foi essencial para consolidar nossa base técnica, estabelecer padrões de desenvolvimento e estruturar processos de trabalho mais eficientes.\n\nAo longo dessa trajetória, aprimoramos nossas práticas de programação, arquitetura de software, design de interfaces e gestão de projetos, sempre priorizando a organização, a comunicação transparente e a melhoria contínua.\n\nCom o amadurecimento da equipe, ampliamos nossa visão de negócio e passamos a trabalhar em duas frentes complementares: o desenvolvimento de soluções personalizadas para empresas e a criação de produtos digitais próprios, com foco em inovação e escalabilidade.\n\nHoje, seguimos evoluindo com o compromisso de unir conhecimento técnico, criatividade e planejamento estratégico. Nossa visão para o futuro é expandir nossa presença no mercado digital, desenvolver produtos cada vez mais relevantes e continuar transformando ideias em soluções robustas, sustentáveis e preparadas para crescer.",
+      "imagem": "assets/images/empresa_historia.png"
+    }
+  ]
+}, 
+
+  
+"jogo": {
+  "titulo": "JOGO",
+  "imagemHeader": "assets/images/header_jogo.jpeg",
+  "secoes": [
+    {
+      "titulo": "JAPÃO",
+      "imagem": "assets/images/jogo_secao.png",
+      "motivoEscolha": "Explique por que esse cenário foi escolhido, qual foi a inspiração e como ele se relaciona com a proposta do jogo.",
+      "personagem": "Kenji",
+      "motivoPersonagem": "Personagem com um tom de pele mais clara, cabelo liso escuro, e roupas largas, mais de rua, com cores simples e sapato preto.",
+      "imagemPersonagem": "assets/images/Kenji_Japao.png",
+      "objeto": "KATANA",
+      "motivoObjeto": "A katana é uma espada tradicional japonesa que se tornou um dos símbolos mais reconhecidos da cultura e da história do Japão. Desenvolvida e aperfeiçoada ao longo de séculos, foi utilizada principalmente pelos samurais, a classe guerreira japonesa, e ficou conhecida por sua lâmina curva, afiada e de um único fio. Além de sua função como arma, a katana passou a representar valores associados ao código de conduta dos samurais, como disciplina, honra e lealdade, tornando-se também um importante elemento da identidade cultural japonesa. Inspirado nesse contexto histórico e na cultura pop japonesa, o projeto apresenta uma katana baseada na arma utilizada por Muichiro Tokito, personagem da obra Demon Slayer: Kimetsu no Yaiba. A lâmina levemente azulada remete às técnicas e à estética visual do personagem, enquanto o cabo preto com detalhes dourados e azuis combina elegância, sobriedade e elementos fantásticos. Dessa forma, o projeto une a tradição das espadas japonesas à representação contemporânea dos animes, valorizando tanto o significado histórico da katana quanto sua presença na cultura popular.",
+      "imagemObjeto": "assets/images/Katana.png"
+    },
+    {
+      "titulo": "ITALIA",
+      "imagem": "assets/images/jogo_secao.png",
+      "motivoEscolha": "Explique o motivo da escolha deste cenário e o que o diferencia da primeira fase.",
+      "personagem": "Sofia",
+      "motivoPersonagem": "Personagem com roupas mais sociais, inspirada em estilo mais retrô, com coloração verde escuro, branco, e sapatos com cor vibrante para dar a ideia de uma pessoa jovial.",
+      "imagemPersonagem": "assets/images/Sofia_Italia.png",
+      "objeto": "FERRARI F40",
+      "motivoObjeto": "A Itália possui uma longa tradição na indústria automobilística, sendo reconhecida mundialmente pela combinação de design, desempenho e inovação. Entre suas marcas mais emblemáticas está a Ferrari, fundada por Enzo Ferrari em 1939, cuja identidade está fortemente ligada ao automobilismo e à engenharia esportiva. Um de seus modelos mais icônicos é a Ferrari F40, lançada em 1987 para celebrar os 40 anos da marca. Desenvolvida com foco na velocidade, na leveza e no desempenho, tornou-se um marco na história dos supercarros e o último modelo aprovado pessoalmente por Enzo Ferrari antes de sua morte. Inspirado nesse legado automobilístico italiano, o projeto apresenta uma miniatura da Ferrari F40 na tradicional cor vermelha Rosso Corsa, tonalidade historicamente associada à Ferrari e às competições automobilísticas italianas. A miniatura é fixada em uma base de plástico preta, que proporciona sustentação e destaca visualmente o veículo. Dessa forma, o projeto valoriza a história do automobilismo italiano, reunindo em uma peça colecionável elementos de design, velocidade e tradição esportiva.",
+      "imagemObjeto": "assets/images/Ferrari.png"
+    },
+    {
+      "titulo": "EGITO",
+      "imagem": "assets/images/jogo_secao_3.jpeg",
+      "motivoEscolha": "Explique a inspiração para o cenário desértico e por que ele foi escolhido para esta etapa do jogo.",
+      "personagem": "Amira",
+      "motivoPersonagem": "Personagem inspirada com roupas largas, utilizando calças longas, regata branca e acessórios dourados para simbolizar um estilo egípcio",
+      "imagemPersonagem": "assets/images/Amira_Egito.png",
+      "objeto": "ESCARAVELHO EGÍPCIO",
+      "motivoObjeto": "O escaravelho egípcio é um símbolo da cultura do Antigo Egito, associado ao deus Khepri, representação do Sol nascente, da renovação e do renascimento. Sua simbologia estava relacionada ao comportamento do escaravelho, que rola esferas de esterco pelo solo, movimento interpretado pelos egípcios como uma representação do percurso do Sol pelo céu. Por isso, amuletos em formato de escaravelho eram utilizados como símbolos de proteção, transformação e vida eterna, sendo encontrados em joias, selos e objetos funerários. Inspirado nesse contexto histórico e mitológico, o projeto apresenta um escaravelho dourado com detalhes roxos, combinando referências da arte e da simbologia egípcias com elementos visuais de jogos e filmes contemporâneos. O dourado representa a riqueza, a divindade e a associação com o Sol, enquanto o roxo acrescenta uma sensação de mistério, poder e fantasia. Essa combinação busca preservar o significado ancestral do escaravelho, reinterpretando-o por meio de uma estética moderna, capaz de unir história, mitologia e cultura pop.",
+      "imagemObjeto": "assets/images/Escaravelho.png"
+    },
+    {
+      "titulo": "BRASIL",
+      "imagem": "assets/images/jogo_secao_4.jpeg",
+      "motivoEscolha": "Explique por que a fase acontece no interior da construção e como esse ambiente contribui para a experiência do jogador.",
+      "personagem": "Lucas",
+      "motivoPersonagem": "Personagem com cabelo crespo, com roupas tropicais, simbolizando o Brasil, com a camiseta da seleção brasileira de 2026, bermuda azul e chinelos brancos.",
+      "imagemPersonagem": "assets/images/Lucas_Brasil.png",
+      "objeto": "BERIMBAU",
+      "motivoObjeto": "O berimbau é um instrumento musical de corda de origem africana que se tornou um dos principais símbolos da cultura afro-brasileira, especialmente por sua ligação com a capoeira. Sua presença no Brasil está relacionada à história da diáspora africana e à preservação de tradições culturais trazidas por povos africanos durante o período da escravidão. Ao longo do tempo, o instrumento passou a desempenhar um papel fundamental na capoeira, sendo responsável por orientar o ritmo dos movimentos, determinar os estilos de jogo e acompanhar os cantos. Em 2014, a roda de capoeira foi reconhecida pela UNESCO como Patrimônio Cultural Imaterial da Humanidade. Inspirado nessa tradição, o projeto apresenta um berimbau de aparência antiga, confeccionado em madeira escura, remetendo aos instrumentos tradicionais utilizados em gerações anteriores. Seu visual rústico valoriza a simplicidade dos materiais naturais e a relação entre música, ancestralidade e resistência cultural. Dessa forma, a peça representa não apenas um instrumento musical, mas também um importante elemento da identidade brasileira, simbolizando a preservação das raízes africanas e a continuidade de uma tradição transmitida ao longo dos séculos.",
+      "imagemObjeto": "assets/images/Berimbau.png"
+    }
+  ]
+},
+
+  "equipe": {
+    "titulo": "EQUIPE",
+    "imagemHeader": "assets/images/header_equipe.jpeg",
+    "integrantes": [
+      {
+        "nome": "Davi Carvalho da S. Clemente",
+        "cargo": "Level Designer",
+        "texto": "[...]",
+        "foto": "assets/images/membro_1.jpeg"
+      },
+      {
+        "nome": "Filipe Ichiro R. Okuizume",
+        "cargo": "3D Modelator",
+        "texto": "Uma pessoa determinadafacilidade para , responsável e dedicada, com aprender coisas novas e trabalhar em equipe. Busco sempre melhorar minhas habilidades, enfrentar desafios e adquirir novos conhecimentos, contribuindo de forma positiva para o ambiente de trabalho.",
+        "foto": "assets/images/membro_2.jpeg"
+      },
+      {
+        "nome": "Guilherme N. dos Santos",
+        "cargo": "Full Stack Programmer",
+        "texto": "Uma pessoa enérgica, animada e carismática, que motiva todos ao seu redor e mantém o grupo unido e confiante. É responsável, comprometida e sabe equilibrar descontração com seriedade.\n\nContêm iniciativa, toma decisões com inteligência, sabe o que fazer e quando agir, assume responsabilidades e dá o exemplo. Um líder que inspira, incentiva e cobra quando necessário, mantendo sempre o foco nos objetivos.",
+        "foto": "assets/images/membro_3.jpeg"
+      },
+      {
+        "nome": "Gustavo T. Marques",
+        "cargo": "Programmer and Sound Designer",
+        "texto": "Pessoa dedicada, responsável e determinada, sempre buscando aprender coisas novas e superar desafios. Tenho grande interesse pela área da tecnologia, principalmente por programação e segurança cibernética.\n\nEntre minhas principais qualidades estão a persistência, a criatividade, o trabalho em equipe e a vontade de evoluir. Gosto de encontrar soluções para problemas e acredito que cada experiência contribui para meu crescimento pessoal e profissional.\n\nMeu objetivo é continuar desenvolvendo meus conhecimentos, conquistar meu espaço no mercado de trabalho e construir uma carreira de sucesso na área da tecnologia.",
+        "foto": "assets/images/membro_4.jpeg"
+      }
+    ]
+  },
+
+  "creditos": {
+    "titulo": "CRÉDITOS",
+    "imagemHeader": "assets/images/header_creditos.jpeg",
+    "secoes": [
+      {
+        "professores": [
+          {
+            "nome": "Prof. Me. Welligton Cidade Silva",
+            "matéria": "Coordenador do Curso de Programação de Jogos Digitais",
+            "foto": "assets/images/prof_1.jpeg"
+          },         
+          {
+            "nome": "Prof. Nivia Maria Domingues",
+            "matéria": "PTCC, ECO, TDGA-III",
+              "materias": [
+              {
+                "sigla": "PTCC",
+                "nomeCompleto": "Planejamento e Desenvolvimento do TCC em Programação de Jogos Digitais"
+              },
+              {
+                "sigla": "ECO",
+                "nomeCompleto": "Ética e Cidadania Organizacional"
+              },
+              {
+                "sigla": "TDGA-III",
+                "nomeCompleto": "Técnicas de Desenho e Desenvolvimento de Game Art III"
+              }
+            ],
+            "foto": "assets/images/prof_2.jpeg"
+          },
+          {
+            "nome": "Prof. Aline Firmino Brito",
+            "matéria": "LP, PDM",
+            "materias": [
+              {
+                "sigla": "LP-II",
+                "nomeCompleto": "Linguagem de Programação II"
+              },
+              {
+                "sigla": "PDM",
+                "nomeCompleto": "Programação para Dispositivos Móveis"
+              }
+            ],
+            "foto": "assets/images/prof_3.jpeg"
+          }
+        ],
+        "integrantes": [
+          {
+            "nome": "Guilherme N. dos Santos",
+            "cargo": "Full Stack Programmer e Líder do Projeto",
+            "foto": "assets/images/membro_3.jpeg"
+          },
+          {
+            "nome": "Filipe Ichiro R. Okuizume",
+            "cargo": "3D Modelator e Vice-Líder do Projeto",
+            "foto": "assets/images/membro_2.jpeg"
+          },
+          {
+            "nome": "Davi Carvalho da S. Clemente",
+            "cargo": "Level Designer",
+            "foto": "assets/images/membro_1.jpeg"
+          },
+          {
+            "nome": "Gustavo T. Marques",
+            "cargo": "Programmer and Sound Designer",
+            "foto": "assets/images/membro_4.jpeg"
+          }
+        ]
+      }
+    ]
+  }
+}
