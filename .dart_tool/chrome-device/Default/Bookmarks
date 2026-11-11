@@ -6,7 +6,7 @@
             "children": [ {
                "date_added": "13361830609159327",
                "date_last_used": "0",
-               "guid": "442c2441-7e81-475a-a812-50a9064c4242",
+               "guid": "d5f32e5b-48d2-494b-adcb-0a446ac17680",
                "id": "8",
                "name": "Dell",
                "show_icon": false,
@@ -17,7 +17,7 @@
             }, {
                "date_added": "13361830609164334",
                "date_last_used": "0",
-               "guid": "121b49fd-a1d8-43f6-a504-077b6887a79b",
+               "guid": "ce093796-be3f-44f7-a927-b843c1aa025e",
                "id": "9",
                "name": "Support.Dell.Com",
                "show_icon": false,
@@ -26,16 +26,16 @@
                "url": "http://www.dell.com/support/home",
                "visit_count": 0
             } ],
-            "date_added": "13436925048354763",
+            "date_added": "13438379347651061",
             "date_last_used": "0",
             "date_modified": "0",
-            "guid": "be166177-e2dc-455f-b699-4456719b7997",
+            "guid": "28ce9d2b-c7b3-4a87-b7dd-dfab44290b8e",
             "id": "7",
             "name": "Dell",
             "source": "import_fre",
             "type": "folder"
          } ],
-         "date_added": "13436925043215188",
+         "date_added": "13438379343497334",
          "date_last_used": "0",
          "date_modified": "0",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
@@ -46,7 +46,7 @@
       },
       "other": {
          "children": [  ],
-         "date_added": "13436925043215188",
+         "date_added": "13438379343497334",
          "date_last_used": "0",
          "date_modified": "0",
          "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
@@ -57,7 +57,7 @@
       },
       "synced": {
          "children": [  ],
-         "date_added": "13436925043215188",
+         "date_added": "13438379343497334",
          "date_last_used": "0",
          "date_modified": "0",
          "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
@@ -68,7 +68,7 @@
       },
       "workspaces_v2": {
          "children": [  ],
-         "date_added": "13436925043215188",
+         "date_added": "13438379343497334",
          "date_last_used": "0",
          "date_modified": "0",
          "guid": "75aa6670-344f-549d-b742-660f029506ab",
