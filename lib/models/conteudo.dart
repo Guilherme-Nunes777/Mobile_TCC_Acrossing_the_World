@@ -72,6 +72,9 @@ class Secao {
 
   final List<Topico> topicos;
 
+  // Mecânicas específicas de cada fase
+  final List<Map<String, dynamic>> mecanicas;
+
   const Secao({
     this.titulo = '',
     this.texto = '',
@@ -85,6 +88,7 @@ class Secao {
     this.motivoObjeto = '',
     this.imagemObjeto,
     this.topicos = const [],
+    this.mecanicas = const [],
   });
 
   factory Secao.fromJson(Map<String, dynamic> j) {
@@ -93,16 +97,22 @@ class Secao {
       texto: j['texto']?.toString() ?? '',
       imagem: _imagemOpcional(j['imagem']),
       proporcaoImagem: _proporcaoImagem(j['proporcaoImagem']),
+
       motivoEscolha: j['motivoEscolha']?.toString() ?? '',
+
       personagem: j['personagem']?.toString() ?? '',
       motivoPersonagem: j['motivoPersonagem']?.toString() ?? '',
       imagemPersonagem: _imagemOpcional(j['imagemPersonagem']),
+
       objeto: j['objeto']?.toString() ?? '',
       motivoObjeto: j['motivoObjeto']?.toString() ?? '',
       imagemObjeto: _imagemOpcional(j['imagemObjeto']),
+
       topicos: _listaMapasSegura(j['topicos'])
           .map((item) => Topico.fromJson(item))
           .toList(),
+
+      mecanicas: _listaMapasSegura(j['mecanicas']),
     );
   }
 }
@@ -132,12 +142,15 @@ class PaginaSimples {
     return PaginaSimples(
       titulo: j['titulo']?.toString() ?? '',
       imagemHeader: _imagemOpcional(j['imagemHeader']),
+
       secoes: secoesJson
           .map((item) => Secao.fromJson(item))
           .toList(),
+
       professores: _listaMapasSegura(
         j['professores'] ?? primeiraSecao['professores'],
       ),
+
       creditosIntegrantes: _listaMapasSegura(
         j['creditosIntegrantes'] ??
             primeiraSecao['creditosIntegrantes'],
@@ -149,12 +162,14 @@ class PaginaSimples {
 class Integrante {
   final String nome;
   final String cargo;
+  final String area;
   final String texto;
   final String? foto;
 
   const Integrante({
     this.nome = '',
     this.cargo = '',
+    this.area = 'JOGOS',
     this.texto = '',
     this.foto,
   });
@@ -163,6 +178,7 @@ class Integrante {
     return Integrante(
       nome: j['nome']?.toString() ?? '',
       cargo: j['cargo']?.toString() ?? '',
+      area: j['area']?.toString() ?? 'JOGOS',
       texto: j['texto']?.toString() ?? '',
       foto: _imagemOpcional(j['foto']),
     );
@@ -180,10 +196,31 @@ class EquipeDados {
     this.integrantes = const [],
   });
 
+  // Integrantes de Jogos
+  List<Integrante> get integrantesJogos {
+    return integrantes
+        .where(
+          (integrante) =>
+              integrante.area.trim().toUpperCase() == 'JOGOS',
+        )
+        .toList();
+  }
+
+  // Integrantes de Desenvolvimento de Sistemas
+  List<Integrante> get integrantesDS {
+    return integrantes
+        .where(
+          (integrante) =>
+              integrante.area.trim().toUpperCase() == 'DS',
+        )
+        .toList();
+  }
+
   factory EquipeDados.fromJson(Map<String, dynamic> j) {
     return EquipeDados(
       titulo: j['titulo']?.toString() ?? '',
       imagemHeader: _imagemOpcional(j['imagemHeader']),
+
       integrantes: _listaMapasSegura(j['integrantes'])
           .map((item) => Integrante.fromJson(item))
           .toList(),
@@ -227,8 +264,10 @@ class HomeDados {
       fotos: (j['fotos'] as List? ?? [])
           .whereType<String>()
           .toList(),
+
       tituloDescubra:
           j['tituloDescubra']?.toString() ?? '',
+
       botoes: _listaMapasSegura(j['botoes'])
           .map((item) => BotaoHome.fromJson(item))
           .toList(),
@@ -258,18 +297,23 @@ class Conteudo {
 
     return Conteudo(
       appTitulo: app['titulo']?.toString() ?? '',
+
       home: HomeDados.fromJson(
         _mapaSegura(j['home']),
       ),
+
       empresa: PaginaSimples.fromJson(
         _mapaSegura(j['empresa']),
       ),
+
       jogo: PaginaSimples.fromJson(
         _mapaSegura(j['jogo']),
       ),
+
       equipe: EquipeDados.fromJson(
         _mapaSegura(j['equipe']),
       ),
+
       creditos: PaginaSimples.fromJson(
         _mapaSegura(j['creditos']),
       ),

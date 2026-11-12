@@ -1,27 +1,31 @@
-2026/11/05-18:10:36.009 71e8 Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.a3e802e6\flutter_tools_chrome_device.6ed182f9\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
-2026/11/05-18:10:36.011 71e8 Recovering log #29
-2026/11/05-18:10:36.012 71e8 Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.a3e802e6\flutter_tools_chrome_device.6ed182f9\Default\EdgeCoupons/coupons_data.db/000029.log 
-2026/11/05-18:10:36.013 71e8 Delete type=0 #4
-2026/11/05-18:10:36.013 71e8 Delete type=0 #7
-2026/11/05-18:10:36.013 71e8 Delete type=2 #8
-2026/11/05-18:10:36.013 71e8 Delete type=0 #10
-2026/11/05-18:10:36.014 71e8 Delete type=2 #11
-2026/11/05-18:10:36.014 71e8 Delete type=0 #13
-2026/11/05-18:10:36.014 71e8 Delete type=2 #14
-2026/11/05-18:10:36.014 71e8 Delete type=0 #16
-2026/11/05-18:10:36.014 71e8 Delete type=2 #17
-2026/11/05-18:10:36.014 71e8 Delete type=0 #19
-2026/11/05-18:10:36.014 71e8 Delete type=0 #23
-2026/11/05-18:10:36.014 71e8 Delete type=0 #26
-2026/11/05-18:10:36.254 5668 Level-0 table #33: started
-2026/11/05-18:10:36.271 5668 Level-0 table #33: 683376 bytes OK
-2026/11/05-18:10:36.273 5668 Delete type=0 #29
-2026/11/05-18:10:36.274 692c Compacting 4@0 + 1@1 files
-2026/11/05-18:10:36.296 692c Generated table #34@0: 3 keys, 683376 bytes
-2026/11/05-18:10:36.296 692c Compacted 4@0 + 1@1 files => 683376 bytes
-2026/11/05-18:10:36.296 692c compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/11/05-18:10:36.297 692c Delete type=2 #21
-2026/11/05-18:10:36.297 692c Delete type=2 #24
-2026/11/05-18:10:36.297 692c Delete type=2 #27
-2026/11/05-18:10:36.297 692c Delete type=2 #30
-2026/11/05-18:10:36.297 692c Delete type=2 #33
+2026/11/09-21:43:43.188 3ef0 Reusing MANIFEST C:\Users\User\AppData\Local\Temp\flutter_tools.82bb664\flutter_tools_chrome_device.850f99b0\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/11/09-21:43:43.195 3ef0 Recovering log #45
+2026/11/09-21:43:43.196 3ef0 Reusing old log C:\Users\User\AppData\Local\Temp\flutter_tools.82bb664\flutter_tools_chrome_device.850f99b0\Default\EdgeCoupons/coupons_data.db/000045.log 
+2026/11/09-21:43:43.206 3ef0 Delete type=0 #4
+2026/11/09-21:43:43.206 3ef0 Delete type=0 #7
+2026/11/09-21:43:43.206 3ef0 Delete type=2 #8
+2026/11/09-21:43:43.206 3ef0 Delete type=0 #10
+2026/11/09-21:43:43.206 3ef0 Delete type=2 #11
+2026/11/09-21:43:43.206 3ef0 Delete type=0 #13
+2026/11/09-21:43:43.206 3ef0 Delete type=2 #14
+2026/11/09-21:43:43.207 3ef0 Delete type=0 #16
+2026/11/09-21:43:43.207 3ef0 Delete type=2 #17
+2026/11/09-21:43:43.207 3ef0 Delete type=0 #19
+2026/11/09-21:43:43.207 3ef0 Delete type=2 #21
+2026/11/09-21:43:43.207 3ef0 Delete type=0 #23
+2026/11/09-21:43:43.208 3ef0 Delete type=2 #24
+2026/11/09-21:43:43.208 3ef0 Delete type=0 #26
+2026/11/09-21:43:43.208 3ef0 Delete type=2 #27
+2026/11/09-21:43:43.208 3ef0 Delete type=0 #29
+2026/11/09-21:43:43.208 3ef0 Delete type=2 #30
+2026/11/09-21:43:43.211 3ef0 Delete type=0 #32
+2026/11/09-21:43:43.213 3ef0 Delete type=2 #34
+2026/11/09-21:43:43.213 3ef0 Delete type=0 #36
+2026/11/09-21:43:43.213 3ef0 Delete type=2 #37
+2026/11/09-21:43:43.213 3ef0 Delete type=0 #39
+2026/11/09-21:43:43.213 3ef0 Delete type=2 #40
+2026/11/09-21:43:43.213 3ef0 Delete type=0 #42
+2026/11/09-21:43:43.213 3ef0 Delete type=2 #43
+2026/11/09-21:43:43.399 4260 Level-0 table #50: started
+2026/11/09-21:43:43.401 4260 Level-0 table #50: 683376 bytes OK
+2026/11/09-21:43:43.403 4260 Delete type=0 #45

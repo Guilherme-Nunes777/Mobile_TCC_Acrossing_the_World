@@ -41,6 +41,12 @@
     "imagemHeader": "assets/images/header_empresa.png",
     "secoes": [   
     {
+      "titulo": "QUEM SOMOS",
+      "texto": "Somos uma empresa de tecnologia especializada no desenvolvimento de soluções digitais, unindo engenharia de software, design e visão estratégica para transformar ideias em produtos funcionais e eficientes.\n\nFundada por Davi Okano, Lavinia, Guilherme e Filipe Ichiro, nossa equipe atua no desenvolvimento de plataformas, sistemas e aplicações personalizadas, além da criação de produtos digitais próprios, incluindo jogos e experiências interativas.\n\nNosso trabalho é guiado por três pilares: consistência, colaboração e aprendizado contínuo. Buscamos compreender as necessidades de cada cliente, desenvolver soluções adequadas aos seus objetivos e entregar resultados que combinem desempenho, usabilidade e qualidade técnica.\n\nMais do que prestar serviços de desenvolvimento, queremos construir parcerias duradouras e criar soluções digitais que gerem valor real.",
+      "imagem": "assets/images/empresa_quem_somos.jpeg"
+    },
+    {
+      
       "titulo": "NOSSA HISTÓRIA",
       "proporcaoImagem": 2,
       "texto": "Nossa história começou a partir da união de diferentes competências, ideias e perspectivas, reunidas por um objetivo em comum: desenvolver soluções tecnológicas capazes de transformar desafios em oportunidades. Desde o início, acreditamos que a inovação nasce da colaboração, da criatividade e da busca constante por novas possibilidades. Por isso, cada experiência, conhecimento e contribuição passou a fazer parte da construção de algo maior, fortalecendo nossa identidade e impulsionando nosso crescimento. Ao longo dessa jornada, seguimos comprometidos em criar soluções que aproximem pessoas, simplifiquem processos e gerem impactos positivos, sempre valorizando o aprendizado, a evolução e a transformação por meio da tecnologia.",
@@ -61,11 +67,6 @@
           "texto": "Promover o conhecimento e o desenvolvimento pessoal por meio de experiências interativas, estimulando a curiosidade, a criatividade e a busca constante por novos aprendizados. Valorizamos a diversidade de ideias, a colaboração e a troca de conhecimentos, reconhecendo que cada pessoa possui habilidades, perspectivas e formas únicas de aprender. Acreditamos que a tecnologia, quando utilizada de maneira acessível e significativa, pode ampliar possibilidades, despertar talentos e transformar o processo de aprendizagem em uma experiência mais dinâmica, inclusiva e enriquecedora."
           }
         ]
-      },
-      {
-        "titulo": "QUEM SOMOS",
-        "texto": "Somos uma empresa de tecnologia especializada no desenvolvimento de soluções digitais, unindo engenharia de software, design e visão estratégica para transformar ideias em produtos funcionais e eficientes.\n\nFundada por Davi Okano, Lavinia, Guilherme e Filipe Ichiro, nossa equipe atua no desenvolvimento de plataformas, sistemas e aplicações personalizadas, além da criação de produtos digitais próprios, incluindo jogos e experiências interativas.\n\nNosso trabalho é guiado por três pilares: consistência, colaboração e aprendizado contínuo. Buscamos compreender as necessidades de cada cliente, desenvolver soluções adequadas aos seus objetivos e entregar resultados que combinem desempenho, usabilidade e qualidade técnica.\n\nMais do que prestar serviços de desenvolvimento, queremos construir parcerias duradouras e criar soluções digitais que gerem valor real.",
-        "imagem": "assets/images/empresa_quem_somos.jpeg"
       }
     ]
   },
@@ -77,46 +78,86 @@
       {
         "titulo": "JAPÃO",
         "imagem": "assets/images/jogo_secao.png",
-        "motivoEscolha": "Explique por que esse cenário foi escolhido, qual foi a inspiração e como ele se relaciona com a proposta do jogo.",
+        "motivoEscolha": "O Japão foi escolhido para representar uma das fases do nosso jogo por sua rica cultura, arquitetura tradicional e forte ligação com a tecnologia. O país oferece uma combinação única entre tradição e modernidade, proporcionando um cenário cheio de possibilidades para a exploração e a aprendizagem. Além disso, seus templos, paisagens e elementos culturais tornam a experiência mais imersiva, despertando a curiosidade dos jogadores e permitindo que conheçam um pouco mais sobre a cultura japonesa enquanto se divertem.",
         "personagem": "Kenji",
         "motivoPersonagem": "Personagem com um tom de pele mais clara, cabelo liso escuro, e roupas largas, mais de rua, com cores simples e sapato preto.",
         "imagemPersonagem": "assets/images/Kenji_Japao.png",
         "objeto": "KATANA",
         "motivoObjeto": "A katana é uma espada tradicional japonesa que se tornou um dos símbolos mais reconhecidos da cultura e da história do Japão. Desenvolvida e aperfeiçoada ao longo de séculos, foi utilizada principalmente pelos samurais, a classe guerreira japonesa, e ficou conhecida por sua lâmina curva, afiada e de um único fio. Além de sua função como arma, a katana passou a representar valores associados ao código de conduta dos samurais, como disciplina, honra e lealdade, tornando-se também um importante elemento da identidade cultural japonesa. Inspirado nesse contexto histórico e na cultura pop japonesa, o projeto apresenta uma katana baseada na arma utilizada por Muichiro Tokito, personagem da obra Demon Slayer: Kimetsu no Yaiba. A lâmina levemente azulada remete às técnicas e à estética visual do personagem, enquanto o cabo preto com detalhes dourados e azuis combina elegância, sobriedade e elementos fantásticos. Dessa forma, o projeto une a tradição das espadas japonesas à representação contemporânea dos animes, valorizando tanto o significado histórico da katana quanto sua presença na cultura popular.",
-        "imagemObjeto": "assets/images/Katana.png"
+        "imagemObjeto": "assets/images/Katana.png",
+        "mecanicas": [
+          {
+            "titulo": "Exploração do cenário",
+            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+          },
+          {   
+            "titulo": "Desafio principal",
+            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ]
       },
       {
-        "titulo": "ITALIA",
+        "titulo": "ITÁLIA",
         "imagem": "assets/images/jogo_secao.png",
-        "motivoEscolha": "Explique o motivo da escolha deste cenário e o que o diferencia da primeira fase.",
+        "motivoEscolha": "A Itália foi escolhida para representar uma das fases do nosso jogo por sua rica história, arquitetura marcante e grande importância cultural. O país é conhecido por seus monumentos históricos, cidades encantadoras e contribuições para a arte, a ciência e a gastronomia. Esses elementos proporcionam um cenário interessante para a exploração e a aprendizagem, permitindo que os jogadores conheçam um pouco mais sobre a cultura italiana enquanto avançam pelos desafios do jogo.",
         "personagem": "Sofia",
         "motivoPersonagem": "Personagem com roupas mais sociais, inspirada em estilo mais retrô, com coloração verde escuro, branco, e sapatos com cor vibrante para dar a ideia de uma pessoa jovial.",
         "imagemPersonagem": "assets/images/Sofia_Italia.png",
         "objeto": "FERRARI F40",
         "motivoObjeto": "A Itália possui uma longa tradição na indústria automobilística, sendo reconhecida mundialmente pela combinação de design, desempenho e inovação. Entre suas marcas mais emblemáticas está a Ferrari, fundada por Enzo Ferrari em 1939, cuja identidade está fortemente ligada ao automobilismo e à engenharia esportiva. Um de seus modelos mais icônicos é a Ferrari F40, lançada em 1987 para celebrar os 40 anos da marca. Desenvolvida com foco na velocidade, na leveza e no desempenho, tornou-se um marco na história dos supercarros e o último modelo aprovado pessoalmente por Enzo Ferrari antes de sua morte. Inspirado nesse legado automobilístico italiano, o projeto apresenta uma miniatura da Ferrari F40 na tradicional cor vermelha Rosso Corsa, tonalidade historicamente associada à Ferrari e às competições automobilísticas italianas. A miniatura é fixada em uma base de plástico preta, que proporciona sustentação e destaca visualmente o veículo. Dessa forma, o projeto valoriza a história do automobilismo italiano, reunindo em uma peça colecionável elementos de design, velocidade e tradição esportiva.",
-        "imagemObjeto": "assets/images/Ferrari.png"
+        "imagemObjeto": "assets/images/Ferrari.png",
+        "mecanicas": [
+          {
+            "titulo": "Exploração do cenário",
+            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+          },
+          {   
+            "titulo": "Desafio principal",
+            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ]
       },
       {
         "titulo": "EGITO",
         "imagem": "assets/images/jogo_secao_3.jpeg",
-        "motivoEscolha": "Explique a inspiração para o cenário desértico e por que ele foi escolhido para esta etapa do jogo.",
+        "motivoEscolha": "O Egito foi escolhido para representar uma das fases do nosso jogo por sua história milenar, seus monumentos grandiosos e seus mistérios. O país é conhecido pelas pirâmides, pelos templos, pela cultura dos faraós e pela importância do Rio Nilo para o desenvolvimento de sua civilização. Esses elementos criam um cenário envolvente para a exploração e a aprendizagem, permitindo que os jogadores descubram aspectos da história e da cultura egípcia enquanto enfrentam os desafios do jogo.",
         "personagem": "Amira",
         "motivoPersonagem": "Personagem inspirada com roupas largas, utilizando calças longas, regata branca e acessórios dourados para simbolizar um estilo egípcio",
         "imagemPersonagem": "assets/images/Amira_Egito.png",
         "objeto": "ESCARAVELHO EGÍPCIO",
         "motivoObjeto": "O escaravelho egípcio é um símbolo da cultura do Antigo Egito, associado ao deus Khepri, representação do Sol nascente, da renovação e do renascimento. Sua simbologia estava relacionada ao comportamento do escaravelho, que rola esferas de esterco pelo solo, movimento interpretado pelos egípcios como uma representação do percurso do Sol pelo céu. Por isso, amuletos em formato de escaravelho eram utilizados como símbolos de proteção, transformação e vida eterna, sendo encontrados em joias, selos e objetos funerários. Inspirado nesse contexto histórico e mitológico, o projeto apresenta um escaravelho dourado com detalhes roxos, combinando referências da arte e da simbologia egípcias com elementos visuais de jogos e filmes contemporâneos. O dourado representa a riqueza, a divindade e a associação com o Sol, enquanto o roxo acrescenta uma sensação de mistério, poder e fantasia. Essa combinação busca preservar o significado ancestral do escaravelho, reinterpretando-o por meio de uma estética moderna, capaz de unir história, mitologia e cultura pop.",
-        "imagemObjeto": "assets/images/Escaravelho.png"
+        "imagemObjeto": "assets/images/Escaravelho.png",
+        "mecanicas": [
+          {
+            "titulo": "Exploração do cenário",
+            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+          },
+          {   
+            "titulo": "Desafio principal",
+            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ]       
       },
       {
         "titulo": "BRASIL",
         "imagem": "assets/images/jogo_secao_4.jpeg",
-        "motivoEscolha": "Explique por que a fase acontece no interior da construção e como esse ambiente contribui para a experiência do jogador.",
+        "motivoEscolha": "O Brasil foi escolhido para representar uma das fases do nosso jogo por sua grande diversidade cultural, riqueza natural e história. O país possui paisagens variadas, como florestas, rios e praias, além de uma cultura marcada por festas populares, música, danças e tradições regionais. Esses elementos proporcionam um cenário colorido e cheio de possibilidades para a exploração e a aprendizagem, permitindo que os jogadores conheçam melhor a diversidade brasileira enquanto se divertem e superam os desafios do jogo.",
         "personagem": "Lucas",
         "motivoPersonagem": "Personagem com cabelo crespo, com roupas tropicais, simbolizando o Brasil, com a camiseta da seleção brasileira de 2026, bermuda azul e chinelos brancos.",
         "imagemPersonagem": "assets/images/Lucas_Brasil.png",
         "objeto": "BERIMBAU",
         "motivoObjeto": "O berimbau é um instrumento musical de corda de origem africana que se tornou um dos principais símbolos da cultura afro-brasileira, especialmente por sua ligação com a capoeira. Sua presença no Brasil está relacionada à história da diáspora africana e à preservação de tradições culturais trazidas por povos africanos durante o período da escravidão. Ao longo do tempo, o instrumento passou a desempenhar um papel fundamental na capoeira, sendo responsável por orientar o ritmo dos movimentos, determinar os estilos de jogo e acompanhar os cantos. Em 2014, a roda de capoeira foi reconhecida pela UNESCO como Patrimônio Cultural Imaterial da Humanidade. Inspirado nessa tradição, o projeto apresenta um berimbau de aparência antiga, confeccionado em madeira escura, remetendo aos instrumentos tradicionais utilizados em gerações anteriores. Seu visual rústico valoriza a simplicidade dos materiais naturais e a relação entre música, ancestralidade e resistência cultural. Dessa forma, a peça representa não apenas um instrumento musical, mas também um importante elemento da identidade brasileira, simbolizando a preservação das raízes africanas e a continuidade de uma tradição transmitida ao longo dos séculos.",
-        "imagemObjeto": "assets/images/Berimbau.png"
+        "imagemObjeto": "assets/images/Berimbau.png",
+        "mecanicas": [
+          {
+            "titulo": "Exploração do cenário",
+            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+          },
+          {   
+            "titulo": "Desafio principal",
+            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ]        
       }
     ]
   },
@@ -127,26 +168,65 @@
       {
         "nome": "Davi Carvalho da S. Clemente",
         "cargo": "Level Designer",
+        "area": "JOGOS",
         "texto": "Sou uma pessoa dedicada, responsável e comprometida com meus objetivos, sempre buscando aprimorar minhas habilidades e adquirir novos conhecimentos. Tenho facilidade para trabalhar em equipe, adaptar-me a diferentes situações e enfrentar desafios com determinação e criatividade.\n\nPossuo iniciativa, organização e foco na qualidade dos resultados, procurando sempre contribuir de maneira positiva para o ambiente de trabalho. Valorizo a comunicação, o respeito e a colaboração, mantendo uma postura profissional e buscando evoluir constantemente, tanto no aspecto pessoal quanto no profissional.",
         "foto": "assets/images/membro_1.jpeg"
       },
       {
         "nome": "Filipe Ichiro R. Okuizume",
         "cargo": "3D Modelator",
+        "area": "JOGOS",
         "texto": "Sou uma pessoa determinada, responsável e dedicada, que busca sempre dar o melhor de si em todas as atividades realizadas. Tenho facilidade para aprender coisas novas, adaptar-me a diferentes situações e trabalhar em equipe, valorizando o respeito, a colaboração e a boa comunicação. Sou comprometida com minhas responsabilidades, procuro cumprir minhas tarefas com organização, atenção e dedicação, sempre buscando alcançar bons resultados.\n\nTenho disposição para enfrentar novos desafios, desenvolver minhas habilidades e adquirir conhecimentos que contribuam para meu crescimento pessoal e profissional. Busco constantemente novas oportunidades de aprendizado, estou aberta a receber orientações e aprender com experiências diferentes, procurando evoluir a cada dia. Meu objetivo é crescer profissionalmente, contribuir de forma positiva para o ambiente de trabalho e colaborar para o desenvolvimento e sucesso da empresa.",
         "foto": "assets/images/membro_2.jpeg"
       },
       {
         "nome": "Guilherme N. dos Santos",
         "cargo": "Full Stack Programmer",
+        "area": "JOGOS",
         "texto": "Uma pessoa enérgica, animada e carismática, que motiva todos ao seu redor e mantém o grupo unido e confiante. É responsável, comprometida e sabe equilibrar descontração com seriedade.\n\nContêm iniciativa, toma decisões com inteligência, sabe o que fazer e quando agir, assume responsabilidades e dá o exemplo. Um líder que inspira, incentiva e cobra quando necessário, mantendo sempre o foco nos objetivos.",
         "foto": "assets/images/membro_3.jpeg"
       },
       {
         "nome": "Gustavo T. Marques",
         "cargo": "Programmer and Sound Designer",
+        "area": "JOGOS",
         "texto": "Pessoa dedicada, responsável e determinada, sempre buscando aprender coisas novas e superar desafios. Tenho grande interesse pela área da tecnologia, principalmente por programação e segurança cibernética.\n\nEntre minhas principais qualidades estão a persistência, a criatividade, o trabalho em equipe e a vontade de evoluir. Gosto de encontrar soluções para problemas e acredito que cada experiência contribui para meu crescimento pessoal e profissional.\n\nMeu objetivo é continuar desenvolvendo meus conhecimentos, conquistar meu espaço no mercado de trabalho e construir uma carreira de sucesso na área da tecnologia.",
         "foto": "assets/images/membro_4.jpeg"
+      },
+      {
+        "nome": "Lavinia Lis T. de Lira",
+        "cargo": "[...]",
+        "area": "DS",
+        "texto": "[...]",
+        "foto": "assets/images/membro_5.jpeg"
+      },
+      {
+        "nome": "Davi Silva Okano",
+        "cargo": "[...]",
+        "area": "DS",
+        "texto": "[...]",
+        "foto": "assets/images/membro_6.jpeg"
+      },
+      {
+        "nome": "Isabelli Cunha de Melo",
+        "cargo": "[...]",
+        "area": "DS",
+        "texto": "[...]",
+        "foto": "assets/images/membro_7.jpeg"
+      },
+      {
+        "nome": "Ana Beatiz de Sousa Silva",
+        "cargo": "[...]",
+        "area": "DS",
+        "texto": "[...]",
+        "foto": "assets/images/membro_8.jpeg"
+      },
+      {
+        "nome": "Palloma Tiodosio de Souza",
+        "cargo": "[...]",
+        "area": "DS",
+        "texto": "[...]",
+        "foto": "assets/images/membro_9.jpeg"
       }
     ]
   },
@@ -194,28 +274,6 @@
               }
             ],
             "foto": "assets/images/prof_3.jpeg"
-          }
-        ],
-        "integrantes": [
-          {
-            "nome": "Guilherme N. dos Santos",
-            "cargo": "Full Stack Programmer e Líder do Projeto",
-            "foto": "assets/images/membro_3.jpeg"
-          },
-          {
-            "nome": "Filipe Ichiro R. Okuizume",
-            "cargo": "3D Modelator e Vice-Líder do Projeto",
-            "foto": "assets/images/membro_2.jpeg"
-          },
-          {
-            "nome": "Davi Carvalho da S. Clemente",
-            "cargo": "Level Designer",
-            "foto": "assets/images/membro_1.jpeg"
-          },
-          {
-            "nome": "Gustavo T. Marques",
-            "cargo": "Programmer and Sound Designer",
-            "foto": "assets/images/membro_4.jpeg"
           }
         ]
       }

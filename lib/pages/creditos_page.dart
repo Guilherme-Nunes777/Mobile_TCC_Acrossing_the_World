@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import '../models/conteudo.dart';
 import '../widgets/header_imagem.dart';
@@ -13,7 +14,6 @@ class CreditosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final professores = dados.professores;
-    final integrantes = dados.creditosIntegrantes;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6FB),
@@ -27,6 +27,7 @@ class CreditosPage extends StatelessWidget {
                 titulo: dados.titulo,
                 imagem: dados.imagemHeader,
               ),
+
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
@@ -36,22 +37,15 @@ class CreditosPage extends StatelessWidget {
                       Icons.school_rounded,
                       'Professores orientadores',
                     ),
+
                     const SizedBox(height: 16),
+
                     _gradePessoas(
                       professores,
-                      professor: true,
                     ),
-                    const SizedBox(height: 34),
-                    _tituloSecao(
-                      Icons.groups_rounded,
-                      'Integrantes do grupo',
-                    ),
-                    const SizedBox(height: 16),
-                    _gradePessoas(
-                      integrantes,
-                      professor: false,
-                    ),
+
                     const SizedBox(height: 28),
+
                     Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(20),
@@ -119,12 +113,12 @@ class CreditosPage extends StatelessWidget {
   }
 
   Widget _gradePessoas(
-    List<Map<String, dynamic>> pessoas, {
-    required bool professor,
-  }) {
+    List<Map<String, dynamic>> pessoas,
+  ) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final largura = constraints.maxWidth;
+
         final colunas = largura >= 850
             ? 3
             : largura >= 540
@@ -132,6 +126,7 @@ class CreditosPage extends StatelessWidget {
                 : 1;
 
         const espacamento = 14.0;
+
         final larguraCard =
             (largura - espacamento * (colunas - 1)) / colunas;
 
@@ -143,7 +138,6 @@ class CreditosPage extends StatelessWidget {
               width: larguraCard,
               child: _PessoaCard(
                 pessoa: pessoa,
-                professor: professor,
               ),
             );
           }).toList(),
@@ -155,21 +149,16 @@ class CreditosPage extends StatelessWidget {
 
 class _PessoaCard extends StatelessWidget {
   final Map<String, dynamic> pessoa;
-  final bool professor;
 
   const _PessoaCard({
     required this.pessoa,
-    required this.professor,
   });
 
   @override
   Widget build(BuildContext context) {
     final nome = (pessoa['nome'] ?? '').toString();
     final foto = (pessoa['foto'] ?? '').toString();
-
-    final detalhe = professor
-        ? (pessoa['matéria'] ?? '').toString()
-        : (pessoa['cargo'] ?? '').toString();
+    final detalhe = (pessoa['matéria'] ?? '').toString();
 
     return Container(
       padding: const EdgeInsets.all(18),
@@ -208,7 +197,9 @@ class _PessoaCard extends StatelessWidget {
               ),
             ),
           ),
+
           const SizedBox(height: 16),
+
           Text(
             nome,
             textAlign: TextAlign.center,
@@ -218,18 +209,10 @@ class _PessoaCard extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+
           const SizedBox(height: 10),
-          if (professor)
-            _materiasWidget(context, detalhe)
-          else
-            Text(
-              detalhe,
-              style: const TextStyle(
-                color: Color(0xFF64708D),
-                fontSize: 12.5,
-                height: 1.5,
-              ),
-            ),
+
+          _materiasWidget(context, detalhe),
         ],
       ),
     );
@@ -239,12 +222,10 @@ class _PessoaCard extends StatelessWidget {
     return Container(
       color: const Color(0xFFEDF0F6),
       alignment: Alignment.center,
-      child: Icon(
-        professor
-            ? Icons.school_rounded
-            : Icons.person_rounded,
+      child: const Icon(
+        Icons.school_rounded,
         size: 42,
-        color: const Color(0xFF5368CE),
+        color: Color(0xFF5368CE),
       ),
     );
   }
@@ -275,6 +256,7 @@ class _PessoaCard extends StatelessWidget {
         }
 
         final sigla = (item['sigla'] ?? '').toString();
+
         final nomeCompleto =
             (item['nomeCompleto'] ?? sigla).toString();
 
