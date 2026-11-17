@@ -1,3 +1,4 @@
+
 {
   "app": {
     "titulo": "Mobile TCC"
@@ -38,6 +39,10 @@
   "empresa": {
     "titulo": "EMPRESA",
     "imagemHeader": "assets/images/header_empresa.png",
+    "linkOficial": {
+      "titulo": "Site oficial da empresa",
+      "url": ""
+    },
     "secoes": [
       {
         "titulo": "QUEM SOMOS",
@@ -68,6 +73,7 @@
       }
     ]
   },
+
   "jogo": {
     "titulo": "JOGO",
     "imagemHeader": "assets/images/header_jogo.jpeg",
@@ -91,6 +97,13 @@
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
           }
+        ],
+        "referencias": [
+          {
+            "titulo": "Organização Nacional de Turismo do Japão",
+            "descricao": "Informações sobre templos, santuários e locais históricos da cultura japonesa.",
+            "url": "https://www.japan.travel/pt/things-to-do/history/temples-and-shrines/"
+          }
         ]
       },
       {
@@ -111,6 +124,18 @@
           {
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ],
+        "referencias": [
+          {
+            "titulo": "Italia.it - História de Roma",
+            "descricao": "Conteúdo sobre a história de Roma, seus monumentos e sua importância cultural na Itália.",
+            "url": "https://www.italia.it/en/lazio/rome/guide-history-facts"
+          },
+          {
+            "titulo": "Italia.it - Arte e cultura na Itália",
+            "descricao": "Informações sobre a história, a arte e o patrimônio cultural italiano.",
+            "url": "https://www.italia.it/en/italy/things-to-do/art-culture"
           }
         ]
       },
@@ -133,6 +158,18 @@
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
           }
+        ],
+        "referencias": [
+          {
+            "titulo": "Ministério do Turismo e Antiguidades do Egito - Planalto de Gizé",
+            "descricao": "Informações históricas e arqueológicas sobre as pirâmides de Gizé e a Grande Esfinge.",
+            "url": "https://egymonuments.gov.eg/archaeological-sites/giza-plateau/"
+          },
+          {
+            "titulo": "Ministério do Turismo e Antiguidades do Egito - Antigo Império",
+            "descricao": "Conteúdo sobre o Antigo Império egípcio, os faraós e o desenvolvimento das pirâmides.",
+            "url": "https://egymonuments.gov.eg/en/historical-periods/old-kingdom"
+          }
         ]
       },
       {
@@ -153,6 +190,18 @@
           {
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ],
+        "referencias": [
+          {
+            "titulo": "IPHAN - Registro da Roda de Capoeira",
+            "descricao": "Informações sobre o reconhecimento da roda de capoeira como Patrimônio Cultural do Brasil e sua importância histórica.",
+            "url": "https://bcr.iphan.gov.br/acoes-de-salvaguarda/registro-da-roda-de-capoeira-como-patrimonio-cultural-do-brasil/"
+          },
+          {
+            "titulo": "Ministério da Cultura - Roda de Capoeira",
+            "descricao": "Conteúdo sobre a relação entre capoeira, música, berimbau e cultura afro-brasileira.",
+            "url": "https://www.gov.br/cultura/pt-br/assuntos/noticias-defeso-eleitoral/roda-de-capoeira-patrimonio-cultural-do-brasil-une-luta-danca-e-musica/"
           }
         ]
       }
@@ -188,6 +237,7 @@
       }
     ]
   },
+
   "creditos": {
     "titulo": "CRÉDITOS",
     "imagemHeader": "assets/images/header_creditos.jpeg",
@@ -235,6 +285,59 @@
           }
         ]
       }
-    ]
+    ],
+    "referencias": [
+      {
+        "titulo": "IPHAN - Registro da Roda de Capoeira",
+        "descricao": "Fonte institucional sobre a capoeira como patrimônio cultural brasileiro.",
+        "url": "https://bcr.iphan.gov.br/acoes-de-salvaguarda/registro-da-roda-de-capoeira-como-patrimonio-cultural-do-brasil/"
+      },
+      {
+        "titulo": "Mapa da Cultura",
+        "descricao": "Parceria com a Secretaria de Estado de Cultura e Economia Criativa do Rio de Janeiro, Mestre Paulão Kikongo, contemplado no Edital Cultura Presente nas Redes.",
+        "url": "https://mapa.cultura.gov.br/projeto/3635/#info"
+      },
+      {
+        "titulo": "Civitatis",
+        "descricao": "Guia completo da cidade de Veneza.",
+        "url": "https://www.tudosobreveneza.com/historia"
+      },
+      {
+        "titulo": "SamuraiGirl - História das Katana",
+        "descricao": "Conteúdo sobre a história cultural das Katanas.",
+        "url": "https://www.samuraigirl.com.br/a-historia-das-espadas-japonesas-katanas/"
+      },
+      {
+        "titulo": "História do Mundo - Arte e cultura no Japão",
+        "descricao": "Informações sobre a história cultural japonesa.",
+        "url": "https://www.historiadomundo.com.br/japonesa"
+      },
+      {
+        "titulo": "Organização Nacional de Turismo do Japão",
+        "descricao": "Informações sobre templos, santuários e locais históricos da cultura japonesa.",
+        "url": "https://www.japan.travel/pt/things-to-do/history/temples-and-shrines/"
+      },
+      {
+        "titulo": "Italia.it - História de Roma",
+        "descricao": "Conteúdo sobre a história de Roma, seus monumentos e sua importância cultural na Itália.",
+        "url": "https://www.italia.it/en/lazio/rome/guide-history-facts"
+      },
+      {
+        "titulo": "Ministério do Turismo e Antiguidades do Egito - Planalto de Gizé",
+        "descricao": "Informações históricas e arqueológicas sobre as pirâmides de Gizé e a Grande Esfinge.",
+        "url": "https://egymonuments.gov.eg/archaeological-sites/giza-plateau/"
+      },
+      {
+        "titulo": "Ministério do Turismo e Antiguidades do Egito - Antigo Império",
+        "descricao": "Conteúdo sobre o Antigo Império egípcio, os faraós e o desenvolvimento das pirâmides.",
+        "url": "https://egymonuments.gov.eg/en/historical-periods/old-kingdom"
+      },
+      {
+        "titulo": "FRESCO Pizzaria",
+        "descricao": "Pizzaria de especialidades Italianas.",
+        "url": "https://cursowp.cursoemvideo.com/manual/"
+      }
+    ],
+    "documentos": []
   }
 }

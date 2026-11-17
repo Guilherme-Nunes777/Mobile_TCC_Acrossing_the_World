@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../models/conteudo.dart';
 import '../widgets/header_imagem.dart';
 
@@ -10,6 +11,44 @@ class CreditosPage extends StatelessWidget {
     super.key,
     required this.dados,
   });
+
+  Future<void> _abrirLink(BuildContext context, String url) async {
+    final uri = Uri.tryParse(url);
+
+    if (uri == null ||
+        !uri.hasScheme ||
+        !(uri.scheme == 'https' || uri.scheme == 'http')) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Link inválido ou não configurado.'),
+        ),
+      );
+      return;
+    }
+
+    try {
+      final abriu = await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      );
+
+      if (!abriu && context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Não foi possível abrir o endereço.'),
+          ),
+        );
+      }
+    } catch (_) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Ocorreu um erro ao abrir o endereço.'),
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +66,6 @@ class CreditosPage extends StatelessWidget {
                 titulo: dados.titulo,
                 imagem: dados.imagemHeader,
               ),
-
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
@@ -37,15 +75,71 @@ class CreditosPage extends StatelessWidget {
                       Icons.school_rounded,
                       'Professores orientadores',
                     ),
-
                     const SizedBox(height: 16),
-
-                    _gradePessoas(
-                      professores,
-                    ),
-
+                    _gradePessoas(professores),
+                    if (dados.referencias.isNotEmpty) ...[
+                      const SizedBox(height: 30),
+                      _tituloSecao(
+                        Icons.menu_book_rounded,
+                        'Referências',
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'Fontes utilizadas como base para o desenvolvimento do projeto.',
+                        style: TextStyle(
+                          color: Color(0xFF64708D),
+                          fontSize: 13,
+                          height: 1.5,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      for (final referencia in dados.referencias)
+                        _CardRecurso(
+                          titulo:
+                              referencia['titulo']?.toString() ?? '',
+                          descricao:
+                              referencia['descricao']?.toString() ?? '',
+                          url: referencia['url']?.toString() ?? '',
+                          tipo: 'Referência',
+                          icone: Icons.link_rounded,
+                          onTap: () => _abrirLink(
+                            context,
+                            referencia['url']?.toString() ?? '',
+                          ),
+                        ),
+                    ],
+                    if (dados.documentos.isNotEmpty) ...[
+                      const SizedBox(height: 20),
+                      _tituloSecao(
+                        Icons.folder_open_rounded,
+                        'Documentos e materiais',
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'Acesse materiais complementares e arquivos relacionados ao projeto.',
+                        style: TextStyle(
+                          color: Color(0xFF64708D),
+                          fontSize: 13,
+                          height: 1.5,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      for (final documento in dados.documentos)
+                        _CardRecurso(
+                          titulo:
+                              documento['titulo']?.toString() ?? '',
+                          descricao:
+                              documento['descricao']?.toString() ?? '',
+                          url: documento['url']?.toString() ?? '',
+                          tipo: documento['tipo']?.toString() ?? 'Arquivo',
+                          icone: Icons.description_outlined,
+                          onTap: () => _abrirLink(
+                            context,
+                            documento['url']?.toString() ?? '',
+                          ),
+                        ),
+                    ],
                     const SizedBox(height: 28),
-
                     Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(20),
@@ -112,13 +206,17 @@ class CreditosPage extends StatelessWidget {
     );
   }
 
-  Widget _gradePessoas(
-    List<Map<String, dynamic>> pessoas,
-  ) {
+  Widget _gradePessoas(List<Map<String, dynamic>> pessoas) {
+    if (pessoas.isEmpty) {
+      return const Text(
+        'Nenhum professor cadastrado.',
+        style: TextStyle(color: Color(0xFF64708D)),
+      );
+    }
+
     return LayoutBuilder(
       builder: (context, constraints) {
         final largura = constraints.maxWidth;
-
         final colunas = largura >= 850
             ? 3
             : largura >= 540
@@ -126,7 +224,6 @@ class CreditosPage extends StatelessWidget {
                 : 1;
 
         const espacamento = 14.0;
-
         final larguraCard =
             (largura - espacamento * (colunas - 1)) / colunas;
 
@@ -136,13 +233,118 @@ class CreditosPage extends StatelessWidget {
           children: pessoas.map((pessoa) {
             return SizedBox(
               width: larguraCard,
-              child: _PessoaCard(
-                pessoa: pessoa,
-              ),
+              child: _PessoaCard(pessoa: pessoa),
             );
           }).toList(),
         );
       },
+    );
+  }
+}
+
+class _CardRecurso extends StatelessWidget {
+  final String titulo;
+  final String descricao;
+  final String url;
+  final String tipo;
+  final IconData icone;
+  final VoidCallback onTap;
+
+  const _CardRecurso({
+    required this.titulo,
+    required this.descricao,
+    required this.url,
+    required this.tipo,
+    required this.icone,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: const Color(0xFFE6EAF3),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.025),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: url.isEmpty ? null : onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 46,
+                height: 46,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF5368CE).withOpacity(0.10),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  icone,
+                  color: const Color(0xFF5368CE),
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      tipo,
+                      style: const TextStyle(
+                        color: Color(0xFF5368CE),
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      titulo.isEmpty ? 'Material sem título' : titulo,
+                      style: const TextStyle(
+                        color: Color(0xFF202B46),
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    if (descricao.isNotEmpty) ...[
+                      const SizedBox(height: 5),
+                      Text(
+                        descricao,
+                        style: const TextStyle(
+                          color: Color(0xFF64708D),
+                          fontSize: 12,
+                          height: 1.4,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Icon(
+                Icons.open_in_new_rounded,
+                color: url.isEmpty
+                    ? Colors.grey.shade400
+                    : const Color(0xFF5368CE),
+                size: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -190,16 +392,13 @@ class _PessoaCard extends StatelessWidget {
                     : Image.asset(
                         foto,
                         fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) {
-                          return _fotoAlternativa();
-                        },
+                        errorBuilder: (_, __, ___) =>
+                            _fotoAlternativa(),
                       ),
               ),
             ),
           ),
-
           const SizedBox(height: 16),
-
           Text(
             nome,
             textAlign: TextAlign.center,
@@ -209,9 +408,7 @@ class _PessoaCard extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-
           const SizedBox(height: 10),
-
           _materiasWidget(context, detalhe),
         ],
       ),
@@ -230,10 +427,7 @@ class _PessoaCard extends StatelessWidget {
     );
   }
 
-  Widget _materiasWidget(
-    BuildContext context,
-    String detalhe,
-  ) {
+  Widget _materiasWidget(BuildContext context, String detalhe) {
     final materias = pessoa['materias'];
 
     if (materias is! List || materias.isEmpty) {
@@ -256,7 +450,6 @@ class _PessoaCard extends StatelessWidget {
         }
 
         final sigla = (item['sigla'] ?? '').toString();
-
         final nomeCompleto =
             (item['nomeCompleto'] ?? sigla).toString();
 

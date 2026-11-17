@@ -1,3 +1,4 @@
+
 {
   "app": {
     "titulo": "Mobile TCC"
@@ -35,36 +36,38 @@
       }
     ]
   },
-
   "empresa": {
     "titulo": "EMPRESA",
     "imagemHeader": "assets/images/header_empresa.png",
-    "secoes": [   
-    {
-      "titulo": "QUEM SOMOS",
-      "texto": "Somos uma empresa de tecnologia especializada no desenvolvimento de soluções digitais, unindo engenharia de software, design e visão estratégica para transformar ideias em produtos funcionais e eficientes.\n\nFundada por Davi Okano, Lavinia, Guilherme e Filipe Ichiro, nossa equipe atua no desenvolvimento de plataformas, sistemas e aplicações personalizadas, além da criação de produtos digitais próprios, incluindo jogos e experiências interativas.\n\nNosso trabalho é guiado por três pilares: consistência, colaboração e aprendizado contínuo. Buscamos compreender as necessidades de cada cliente, desenvolver soluções adequadas aos seus objetivos e entregar resultados que combinem desempenho, usabilidade e qualidade técnica.\n\nMais do que prestar serviços de desenvolvimento, queremos construir parcerias duradouras e criar soluções digitais que gerem valor real.",
-      "imagem": "assets/images/empresa_quem_somos.jpeg"
+    "linkOficial": {
+      "titulo": "Site oficial da empresa",
+      "url": ""
     },
-    {
-      
-      "titulo": "NOSSA HISTÓRIA",
-      "proporcaoImagem": 2,
-      "texto": "Nossa história começou a partir da união de diferentes competências, ideias e perspectivas, reunidas por um objetivo em comum: desenvolver soluções tecnológicas capazes de transformar desafios em oportunidades. Desde o início, acreditamos que a inovação nasce da colaboração, da criatividade e da busca constante por novas possibilidades. Por isso, cada experiência, conhecimento e contribuição passou a fazer parte da construção de algo maior, fortalecendo nossa identidade e impulsionando nosso crescimento. Ao longo dessa jornada, seguimos comprometidos em criar soluções que aproximem pessoas, simplifiquem processos e gerem impactos positivos, sempre valorizando o aprendizado, a evolução e a transformação por meio da tecnologia.",
-      "imagem": "assets/images/empresa_historia.png",
-      "topicos": [
-        {
-          "imagem": "assets/images/missao_visao_valores.png",
-          "proporcaoImagem": 1,
-          "titulo": "MISSÃO",
-          "texto": "Transformar o aprendizado em uma verdadeira jornada de descobertas, utilizando elementos de jogos digitais, exploração, narrativas e desafios interativos para ensinar de maneira envolvente, acessível e divertida."
-        },
-        {
-          "titulo": "VISÃO",
-          "texto": "Ser um projeto de referência na utilização da tecnologia e da gamificação como ferramentas inovadoras de aprendizagem, proporcionando experiências educativas interativas, imersivas e acessíveis."
-        },
-        {
-          "titulo": "VALORES",
-          "texto": "Promover o conhecimento e o desenvolvimento pessoal por meio de experiências interativas, estimulando a curiosidade, a criatividade e a busca constante por novos aprendizados. Valorizamos a diversidade de ideias, a colaboração e a troca de conhecimentos, reconhecendo que cada pessoa possui habilidades, perspectivas e formas únicas de aprender. Acreditamos que a tecnologia, quando utilizada de maneira acessível e significativa, pode ampliar possibilidades, despertar talentos e transformar o processo de aprendizagem em uma experiência mais dinâmica, inclusiva e enriquecedora."
+    "secoes": [
+      {
+        "titulo": "QUEM SOMOS",
+        "texto": "Somos uma empresa de tecnologia especializada no desenvolvimento de soluções digitais, unindo engenharia de software, design e visão estratégica para transformar ideias em produtos funcionais e eficientes.\n\nFundada por Davi Okano, Lavinia, Guilherme e Filipe Ichiro, nossa equipe atua no desenvolvimento de plataformas, sistemas e aplicações personalizadas, além da criação de produtos digitais próprios, incluindo jogos e experiências interativas.\n\nNosso trabalho é guiado por três pilares: consistência, colaboração e aprendizado contínuo. Buscamos compreender as necessidades de cada cliente, desenvolver soluções adequadas aos seus objetivos e entregar resultados que combinem desempenho, usabilidade e qualidade técnica.\n\nMais do que prestar serviços de desenvolvimento, queremos construir parcerias duradouras e criar soluções digitais que gerem valor real.",
+        "imagem": "assets/images/empresa_quem_somos.jpeg"
+      },
+      {
+        "titulo": "NOSSA HISTÓRIA",
+        "proporcaoImagem": 2,
+        "texto": "Nossa história começou a partir da união de diferentes competências, ideias e perspectivas, reunidas por um objetivo em comum: desenvolver soluções tecnológicas capazes de transformar desafios em oportunidades. Desde o início, acreditamos que a inovação nasce da colaboração, da criatividade e da busca constante por novas possibilidades. Por isso, cada experiência, conhecimento e contribuição passou a fazer parte da construção de algo maior, fortalecendo nossa identidade e impulsionando nosso crescimento. Ao longo dessa jornada, seguimos comprometidos em criar soluções que aproximem pessoas, simplifiquem processos e gerem impactos positivos, sempre valorizando o aprendizado, a evolução e a transformação por meio da tecnologia.",
+        "imagem": "assets/images/empresa_historia.png",
+        "topicos": [
+          {
+            "imagem": "assets/images/missao_visao_valores.png",
+            "proporcaoImagem": 1,
+            "titulo": "MISSÃO",
+            "texto": "Transformar o aprendizado em uma verdadeira jornada de descobertas, utilizando elementos de jogos digitais, exploração, narrativas e desafios interativos para ensinar de maneira envolvente, acessível e divertida."
+          },
+          {
+            "titulo": "VISÃO",
+            "texto": "Ser um projeto de referência na utilização da tecnologia e da gamificação como ferramentas inovadoras de aprendizagem, proporcionando experiências educativas interativas, imersivas e acessíveis."
+          },
+          {
+            "titulo": "VALORES",
+            "texto": "Promover o conhecimento e o desenvolvimento pessoal por meio de experiências interativas, estimulando a curiosidade, a criatividade e a busca constante por novos aprendizados. Valorizamos a diversidade de ideias, a colaboração e a troca de conhecimentos, reconhecendo que cada pessoa possui habilidades, perspectivas e formas únicas de aprender. Acreditamos que a tecnologia, quando utilizada de maneira acessível e significativa, pode ampliar possibilidades, despertar talentos e transformar o processo de aprendizagem em uma experiência mais dinâmica, inclusiva e enriquecedora."
           }
         ]
       }
@@ -90,9 +93,16 @@
             "titulo": "Exploração do cenário",
             "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
           },
-          {   
+          {
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ],
+        "referencias": [
+          {
+            "titulo": "Organização Nacional de Turismo do Japão",
+            "descricao": "Informações sobre templos, santuários e locais históricos da cultura japonesa.",
+            "url": "https://www.japan.travel/pt/things-to-do/history/temples-and-shrines/"
           }
         ]
       },
@@ -111,9 +121,21 @@
             "titulo": "Exploração do cenário",
             "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
           },
-          {   
+          {
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+          }
+        ],
+        "referencias": [
+          {
+            "titulo": "Italia.it - História de Roma",
+            "descricao": "Conteúdo sobre a história de Roma, seus monumentos e sua importância cultural na Itália.",
+            "url": "https://www.italia.it/en/lazio/rome/guide-history-facts"
+          },
+          {
+            "titulo": "Italia.it - Arte e cultura na Itália",
+            "descricao": "Informações sobre a história, a arte e o patrimônio cultural italiano.",
+            "url": "https://www.italia.it/en/italy/things-to-do/art-culture"
           }
         ]
       },
@@ -132,11 +154,23 @@
             "titulo": "Exploração do cenário",
             "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
           },
-          {   
+          {
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
           }
-        ]       
+        ],
+        "referencias": [
+          {
+            "titulo": "Ministério do Turismo e Antiguidades do Egito - Planalto de Gizé",
+            "descricao": "Informações históricas e arqueológicas sobre as pirâmides de Gizé e a Grande Esfinge.",
+            "url": "https://egymonuments.gov.eg/archaeological-sites/giza-plateau/"
+          },
+          {
+            "titulo": "Ministério do Turismo e Antiguidades do Egito - Antigo Império",
+            "descricao": "Conteúdo sobre o Antigo Império egípcio, os faraós e o desenvolvimento das pirâmides.",
+            "url": "https://egymonuments.gov.eg/en/historical-periods/old-kingdom"
+          }
+        ]
       },
       {
         "titulo": "BRASIL",
@@ -153,11 +187,23 @@
             "titulo": "Exploração do cenário",
             "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
           },
-          {   
+          {
             "titulo": "Desafio principal",
             "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
           }
-        ]        
+        ],
+        "referencias": [
+          {
+            "titulo": "IPHAN - Registro da Roda de Capoeira",
+            "descricao": "Informações sobre o reconhecimento da roda de capoeira como Patrimônio Cultural do Brasil e sua importância histórica.",
+            "url": "https://bcr.iphan.gov.br/acoes-de-salvaguarda/registro-da-roda-de-capoeira-como-patrimonio-cultural-do-brasil/"
+          },
+          {
+            "titulo": "Ministério da Cultura - Roda de Capoeira",
+            "descricao": "Conteúdo sobre a relação entre capoeira, música, berimbau e cultura afro-brasileira.",
+            "url": "https://www.gov.br/cultura/pt-br/assuntos/noticias-defeso-eleitoral/roda-de-capoeira-patrimonio-cultural-do-brasil-une-luta-danca-e-musica/"
+          }
+        ]
       }
     ]
   },
@@ -168,68 +214,30 @@
       {
         "nome": "Davi Carvalho da S. Clemente",
         "cargo": "Level Designer",
-        "area": "JOGOS",
         "texto": "Sou uma pessoa dedicada, responsável e comprometida com meus objetivos, sempre buscando aprimorar minhas habilidades e adquirir novos conhecimentos. Tenho facilidade para trabalhar em equipe, adaptar-me a diferentes situações e enfrentar desafios com determinação e criatividade.\n\nPossuo iniciativa, organização e foco na qualidade dos resultados, procurando sempre contribuir de maneira positiva para o ambiente de trabalho. Valorizo a comunicação, o respeito e a colaboração, mantendo uma postura profissional e buscando evoluir constantemente, tanto no aspecto pessoal quanto no profissional.",
         "foto": "assets/images/membro_1.jpeg"
       },
       {
         "nome": "Filipe Ichiro R. Okuizume",
         "cargo": "3D Modelator",
-        "area": "JOGOS",
         "texto": "Sou uma pessoa determinada, responsável e dedicada, que busca sempre dar o melhor de si em todas as atividades realizadas. Tenho facilidade para aprender coisas novas, adaptar-me a diferentes situações e trabalhar em equipe, valorizando o respeito, a colaboração e a boa comunicação. Sou comprometida com minhas responsabilidades, procuro cumprir minhas tarefas com organização, atenção e dedicação, sempre buscando alcançar bons resultados.\n\nTenho disposição para enfrentar novos desafios, desenvolver minhas habilidades e adquirir conhecimentos que contribuam para meu crescimento pessoal e profissional. Busco constantemente novas oportunidades de aprendizado, estou aberta a receber orientações e aprender com experiências diferentes, procurando evoluir a cada dia. Meu objetivo é crescer profissionalmente, contribuir de forma positiva para o ambiente de trabalho e colaborar para o desenvolvimento e sucesso da empresa.",
         "foto": "assets/images/membro_2.jpeg"
       },
       {
         "nome": "Guilherme N. dos Santos",
         "cargo": "Full Stack Programmer",
-        "area": "JOGOS",
         "texto": "Uma pessoa enérgica, animada e carismática, que motiva todos ao seu redor e mantém o grupo unido e confiante. É responsável, comprometida e sabe equilibrar descontração com seriedade.\n\nContêm iniciativa, toma decisões com inteligência, sabe o que fazer e quando agir, assume responsabilidades e dá o exemplo. Um líder que inspira, incentiva e cobra quando necessário, mantendo sempre o foco nos objetivos.",
         "foto": "assets/images/membro_3.jpeg"
       },
       {
         "nome": "Gustavo T. Marques",
         "cargo": "Programmer and Sound Designer",
-        "area": "JOGOS",
         "texto": "Pessoa dedicada, responsável e determinada, sempre buscando aprender coisas novas e superar desafios. Tenho grande interesse pela área da tecnologia, principalmente por programação e segurança cibernética.\n\nEntre minhas principais qualidades estão a persistência, a criatividade, o trabalho em equipe e a vontade de evoluir. Gosto de encontrar soluções para problemas e acredito que cada experiência contribui para meu crescimento pessoal e profissional.\n\nMeu objetivo é continuar desenvolvendo meus conhecimentos, conquistar meu espaço no mercado de trabalho e construir uma carreira de sucesso na área da tecnologia.",
         "foto": "assets/images/membro_4.jpeg"
-      },
-      {
-        "nome": "Lavinia Lis T. de Lira",
-        "cargo": "[...]",
-        "area": "DS",
-        "texto": "[...]",
-        "foto": "assets/images/membro_5.jpeg"
-      },
-      {
-        "nome": "Davi Silva Okano",
-        "cargo": "[...]",
-        "area": "DS",
-        "texto": "[...]",
-        "foto": "assets/images/membro_6.jpeg"
-      },
-      {
-        "nome": "Isabelli Cunha de Melo",
-        "cargo": "[...]",
-        "area": "DS",
-        "texto": "[...]",
-        "foto": "assets/images/membro_7.jpeg"
-      },
-      {
-        "nome": "Ana Beatiz de Sousa Silva",
-        "cargo": "[...]",
-        "area": "DS",
-        "texto": "[...]",
-        "foto": "assets/images/membro_8.jpeg"
-      },
-      {
-        "nome": "Palloma Tiodosio de Souza",
-        "cargo": "[...]",
-        "area": "DS",
-        "texto": "[...]",
-        "foto": "assets/images/membro_9.jpeg"
       }
     ]
   },
+
   "creditos": {
     "titulo": "CRÉDITOS",
     "imagemHeader": "assets/images/header_creditos.jpeg",
@@ -277,6 +285,59 @@
           }
         ]
       }
-    ]
+    ],
+    "referencias": [
+      {
+        "titulo": "IPHAN - Registro da Roda de Capoeira",
+        "descricao": "Fonte institucional sobre a capoeira como patrimônio cultural brasileiro.",
+        "url": "https://bcr.iphan.gov.br/acoes-de-salvaguarda/registro-da-roda-de-capoeira-como-patrimonio-cultural-do-brasil/"
+      },
+      {
+        "titulo": "Mapa da Cultura",
+        "descricao": "Parceria com a Secretaria de Estado de Cultura e Economia Criativa do Rio de Janeiro, Mestre Paulão Kikongo, contemplado no Edital Cultura Presente nas Redes.",
+        "url": "https://mapa.cultura.gov.br/projeto/3635/#info"
+      },
+      {
+        "titulo": "Civitatis",
+        "descricao": "Guia completo da cidade de Veneza.",
+        "url": "https://www.tudosobreveneza.com/historia"
+      },
+      {
+        "titulo": "SamuraiGirl - História das Katana",
+        "descricao": "Conteúdo sobre a história cultural das Katanas.",
+        "url": "https://www.samuraigirl.com.br/a-historia-das-espadas-japonesas-katanas/"
+      },
+      {
+        "titulo": "História do Mundo - Arte e cultura no Japão",
+        "descricao": "Informações sobre a história cultural japonesa.",
+        "url": "https://www.historiadomundo.com.br/japonesa"
+      },
+      {
+        "titulo": "Organização Nacional de Turismo do Japão",
+        "descricao": "Informações sobre templos, santuários e locais históricos da cultura japonesa.",
+        "url": "https://www.japan.travel/pt/things-to-do/history/temples-and-shrines/"
+      },
+      {
+        "titulo": "Italia.it - História de Roma",
+        "descricao": "Conteúdo sobre a história de Roma, seus monumentos e sua importância cultural na Itália.",
+        "url": "https://www.italia.it/en/lazio/rome/guide-history-facts"
+      },
+      {
+        "titulo": "Ministério do Turismo e Antiguidades do Egito - Planalto de Gizé",
+        "descricao": "Informações históricas e arqueológicas sobre as pirâmides de Gizé e a Grande Esfinge.",
+        "url": "https://egymonuments.gov.eg/archaeological-sites/giza-plateau/"
+      },
+      {
+        "titulo": "Ministério do Turismo e Antiguidades do Egito - Antigo Império",
+        "descricao": "Conteúdo sobre o Antigo Império egípcio, os faraós e o desenvolvimento das pirâmides.",
+        "url": "https://egymonuments.gov.eg/en/historical-periods/old-kingdom"
+      },
+      {
+        "titulo": "FRESCO Pizzaria",
+        "descricao": "Pizzaria de especialidades Italianas.",
+        "url": "https://cursowp.cursoemvideo.com/manual/"
+      }
+    ],
+    "documentos": []
   }
 }

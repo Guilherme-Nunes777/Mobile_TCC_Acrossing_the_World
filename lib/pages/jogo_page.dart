@@ -16,8 +16,34 @@ class JogoPage extends StatelessWidget {
   static const Color textoEscuro = Color(0xFF252B3A);
   static const Color textoClaro = Color(0xFF555B68);
 
+  List<Secao> _ordenarFases() {
+    const ordem = [
+      'EGITO',
+      'BRASIL',
+      'ITÁLIA',
+      'JAPÃO',
+    ];
+
+    final fases = List<Secao>.from(dados.secoes);
+
+    fases.sort((a, b) {
+      final indiceA = ordem.indexOf(a.titulo.trim().toUpperCase());
+      final indiceB = ordem.indexOf(b.titulo.trim().toUpperCase());
+
+      if (indiceA == -1 && indiceB == -1) return 0;
+      if (indiceA == -1) return 1;
+      if (indiceB == -1) return -1;
+
+      return indiceA.compareTo(indiceB);
+    });
+
+    return fases;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final fases = _ordenarFases();
+
     return Scaffold(
       backgroundColor: fundo,
       body: SingleChildScrollView(
@@ -52,9 +78,9 @@ class JogoPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 22),
-                  for (int i = 0; i < dados.secoes.length; i++)
+                  for (int i = 0; i < fases.length; i++)
                     _CardFase(
-                      secao: dados.secoes[i],
+                      secao: fases[i],
                       numero: i + 1,
                     ),
                 ],
@@ -222,33 +248,26 @@ class _CardFase extends StatelessWidget {
                       color: JogoPage.textoEscuro,
                     ),
                   ),
-
                 const SizedBox(height: 22),
-
                 const _TituloSecao(
                   icone: Icons.landscape_outlined,
                   titulo: 'Por que escolhemos esse cenário?',
                 ),
                 const SizedBox(height: 8),
-
                 if (secao.motivoEscolha.trim().isNotEmpty)
                   _Texto(texto: secao.motivoEscolha),
-
                 const SizedBox(height: 22),
                 const Divider(color: Color(0xFFE2E5EC)),
                 const SizedBox(height: 18),
-
                 const _TituloSecao(
                   icone: Icons.person_outline,
                   titulo: 'O personagem',
                 ),
                 const SizedBox(height: 14),
-
                 _Imagem(
                   caminho: secao.imagemPersonagem,
                   proporcao: 4 / 3,
                 ),
-
                 if (secao.personagem.trim().isNotEmpty) ...[
                   const SizedBox(height: 12),
                   Text(
@@ -260,27 +279,22 @@ class _CardFase extends StatelessWidget {
                     ),
                   ),
                 ],
-
                 if (secao.motivoPersonagem.trim().isNotEmpty) ...[
                   const SizedBox(height: 6),
                   _Texto(texto: secao.motivoPersonagem),
                 ],
-
                 const SizedBox(height: 22),
                 const Divider(color: Color(0xFFE2E5EC)),
                 const SizedBox(height: 18),
-
                 const _TituloSecao(
                   icone: Icons.workspace_premium_outlined,
                   titulo: 'O objeto conquistado',
                 ),
                 const SizedBox(height: 14),
-
                 _Imagem(
                   caminho: secao.imagemObjeto,
                   proporcao: 4 / 3,
                 ),
-
                 if (secao.objeto.trim().isNotEmpty) ...[
                   const SizedBox(height: 12),
                   Text(
@@ -292,14 +306,11 @@ class _CardFase extends StatelessWidget {
                     ),
                   ),
                 ],
-
                 if (secao.motivoObjeto.trim().isNotEmpty) ...[
                   const SizedBox(height: 6),
                   _Texto(texto: secao.motivoObjeto),
                 ],
-
                 const SizedBox(height: 24),
-
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(

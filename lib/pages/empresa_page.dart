@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/conteudo.dart';
 import '../widgets/header_imagem.dart';
@@ -10,6 +11,44 @@ class EmpresaPage extends StatelessWidget {
     super.key,
     required this.dados,
   });
+
+  Future<void> _abrirLink(BuildContext context, String url) async {
+    final uri = Uri.tryParse(url.trim());
+
+    if (uri == null ||
+        !uri.hasScheme ||
+        !(uri.scheme == 'https' || uri.scheme == 'http')) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Link inválido ou não configurado.'),
+        ),
+      );
+      return;
+    }
+
+    try {
+      final abriu = await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      );
+
+      if (!abriu && context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Não foi possível abrir o link.'),
+          ),
+        );
+      }
+    } catch (_) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Ocorreu um erro ao abrir o site.'),
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +74,14 @@ class EmpresaPage extends StatelessWidget {
                     if (secao.topicos.isNotEmpty)
                       _HistoriaComTopicos(secao: secao)
                     else
-                      _CardEmpresa(secao: secao),
+                      _CardEmpresa(
+                        secao: secao,
+                        dados: dados,
+                        onAbrirLink: () => _abrirLink(
+                          context,
+                          dados.linkOficialUrl,
+                        ),
+                      ),
                 ],
               ),
             ),
@@ -82,11 +128,8 @@ class _HistoriaComTopicos extends StatelessWidget {
               letterSpacing: 0.5,
             ),
           ),
-
           const SizedBox(height: 12),
-
           _linhaLateral(),
-
           if (secao.imagem != null) ...[
             const SizedBox(height: 18),
             _ImagemSecao(
@@ -94,7 +137,6 @@ class _HistoriaComTopicos extends StatelessWidget {
               proporcao: secao.proporcaoImagem,
             ),
           ],
-
           if (secao.texto.isNotEmpty) ...[
             const SizedBox(height: 18),
             Text(
@@ -107,13 +149,9 @@ class _HistoriaComTopicos extends StatelessWidget {
               ),
             ),
           ],
-
           const SizedBox(height: 22),
-
           _linhaSeparadora(),
-
           const SizedBox(height: 22),
-
           for (final topico in secao.topicos)
             _TopicoEmpresa(topico: topico),
         ],
@@ -124,13 +162,19 @@ class _HistoriaComTopicos extends StatelessWidget {
 
 class _CardEmpresa extends StatelessWidget {
   final Secao secao;
+  final PaginaSimples dados;
+  final VoidCallback onAbrirLink;
 
   const _CardEmpresa({
     required this.secao,
+    required this.dados,
+    required this.onAbrirLink,
   });
 
   @override
   Widget build(BuildContext context) {
+    final linkConfigurado = dados.linkOficialUrl.trim().isNotEmpty;
+
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 22),
@@ -158,11 +202,8 @@ class _CardEmpresa extends StatelessWidget {
               letterSpacing: 0.5,
             ),
           ),
-
           const SizedBox(height: 12),
-
           _linhaLateral(),
-
           if (secao.imagem != null) ...[
             const SizedBox(height: 18),
             _ImagemSecao(
@@ -170,7 +211,6 @@ class _CardEmpresa extends StatelessWidget {
               proporcao: secao.proporcaoImagem,
             ),
           ],
-
           if (secao.texto.isNotEmpty) ...[
             const SizedBox(height: 18),
             Text(
@@ -181,6 +221,13 @@ class _CardEmpresa extends StatelessWidget {
                 height: 1.8,
                 color: Color(0xFF555B68),
               ),
+            ),
+          ],
+          if (secao.titulo == 'QUEM SOMOS') ...[
+            const SizedBox(height: 22),
+            _CardLinkOficial(
+              titulo: dados.linkOficialTitulo,
+              onTap: linkConfigurado ? onAbrirLink : null,
             ),
           ],
         ],
@@ -209,10 +256,8 @@ class _TopicoEmpresa extends StatelessWidget {
               imagem: topico.imagem!,
               proporcao: topico.proporcaoImagem,
             ),
-
             const SizedBox(height: 8),
           ],
-
           Text(
             topico.titulo,
             style: const TextStyle(
@@ -222,9 +267,7 @@ class _TopicoEmpresa extends StatelessWidget {
               letterSpacing: 0.3,
             ),
           ),
-
           const SizedBox(height: 15),
-
           Text(
             topico.texto,
             textAlign: TextAlign.left,
@@ -232,6 +275,78 @@ class _TopicoEmpresa extends StatelessWidget {
               fontSize: 14,
               height: 1.8,
               color: Color(0xFF555B68),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CardLinkOficial extends StatelessWidget {
+  final String titulo;
+  final VoidCallback? onTap;
+
+  const _CardLinkOficial({
+    required this.titulo,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF5F6FA),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: const Color(0xFFE1E5ED),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(
+            Icons.language_rounded,
+            color: Color(0xFF4263A6),
+            size: 30,
+          ),
+          const SizedBox(height: 12),
+          Text(
+            titulo.isEmpty ? 'Site oficial da empresa' : titulo,
+            style: const TextStyle(
+              color: Color(0xFF252B3A),
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            'Acesse nosso site oficial para conhecer mais sobre a empresa, nossos projetos e soluções.',
+            style: TextStyle(
+              color: Color(0xFF555B68),
+              fontSize: 14,
+              height: 1.6,
+            ),
+          ),
+          const SizedBox(height: 14),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: onTap,
+              icon: const Icon(Icons.open_in_new_rounded),
+              label: const Text('CONHEÇA NOSSA EMPRESA'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF4263A6),
+                foregroundColor: Colors.white,
+                disabledBackgroundColor: const Color(0xFFB8C1D3),
+                disabledForegroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
           ),
         ],
@@ -259,9 +374,7 @@ class _ImagemSecao extends StatelessWidget {
           imagem,
           width: double.infinity,
           fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return _imagemErro();
-          },
+          errorBuilder: (_, __, ___) => _imagemErro(),
         ),
       ),
     );
@@ -287,9 +400,7 @@ class _ImagemTopico extends StatelessWidget {
           imagem,
           width: double.infinity,
           fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return _imagemErro();
-          },
+          errorBuilder: (_, __, ___) => _imagemErro(),
         ),
       ),
     );
