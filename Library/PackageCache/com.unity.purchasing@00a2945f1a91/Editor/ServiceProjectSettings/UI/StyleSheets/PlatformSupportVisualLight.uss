@@ -1,0 +1,8 @@
+.editor-setup-label {
+    color: #4c4c4c;
+}
+
+.editor-setup-title,
+.editor-setup-value {
+    color: #090909;
+}

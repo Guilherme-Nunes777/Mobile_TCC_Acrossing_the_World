@@ -1,13 +1,21 @@
+double _proporcaoImagem(dynamic valor) {
+  if (valor is num && valor > 0) {
+    return valor.toDouble();
+  }
+  return 16 / 9;
+}
+
 Map<String, dynamic> _mapaSegura(dynamic valor) {
   if (valor is Map) {
     return Map<String, dynamic>.from(valor);
   }
-
-  return const <String, dynamic>{};
+  return {};
 }
 
 List<Map<String, dynamic>> _listaMapasSegura(dynamic valor) {
-  if (valor is! List) return const [];
+  if (valor is! List) {
+    return [];
+  }
 
   return valor
       .whereType<Map>()
@@ -16,19 +24,10 @@ List<Map<String, dynamic>> _listaMapasSegura(dynamic valor) {
 }
 
 String? _imagemOpcional(dynamic valor) {
-  if (valor is! String || valor.trim().isEmpty) {
+  if (valor == null || valor.toString().trim().isEmpty) {
     return null;
   }
-
-  return valor;
-}
-
-double _proporcaoImagem(dynamic valor) {
-  if (valor is num && valor > 0) {
-    return valor.toDouble();
-  }
-
-  return 16 / 9;
+  return valor.toString();
 }
 
 class Topico {
@@ -37,19 +36,19 @@ class Topico {
   final String? imagem;
   final double proporcaoImagem;
 
-  const Topico({
-    this.titulo = '',
-    this.texto = '',
+  Topico({
+    required this.titulo,
+    required this.texto,
     this.imagem,
     this.proporcaoImagem = 16 / 9,
   });
 
-  factory Topico.fromJson(Map<String, dynamic> j) {
+  factory Topico.fromJson(Map<String, dynamic> json) {
     return Topico(
-      titulo: j['titulo']?.toString() ?? '',
-      texto: j['texto']?.toString() ?? '',
-      imagem: _imagemOpcional(j['imagem']),
-      proporcaoImagem: _proporcaoImagem(j['proporcaoImagem']),
+      titulo: json['titulo']?.toString() ?? '',
+      texto: json['texto']?.toString() ?? '',
+      imagem: _imagemOpcional(json['imagem']),
+      proporcaoImagem: _proporcaoImagem(json['proporcaoImagem']),
     );
   }
 }
@@ -59,25 +58,19 @@ class Secao {
   final String texto;
   final String? imagem;
   final double proporcaoImagem;
-
   final String motivoEscolha;
-
   final String personagem;
   final String motivoPersonagem;
   final String? imagemPersonagem;
-
   final String objeto;
   final String motivoObjeto;
   final String? imagemObjeto;
-
   final List<Topico> topicos;
-
-  // Mecânicas específicas de cada fase
   final List<Map<String, dynamic>> mecanicas;
 
-  const Secao({
-    this.titulo = '',
-    this.texto = '',
+  Secao({
+    required this.titulo,
+    required this.texto,
     this.imagem,
     this.proporcaoImagem = 16 / 9,
     this.motivoEscolha = '',
@@ -91,70 +84,66 @@ class Secao {
     this.mecanicas = const [],
   });
 
-  factory Secao.fromJson(Map<String, dynamic> j) {
+  factory Secao.fromJson(Map<String, dynamic> json) {
     return Secao(
-      titulo: j['titulo']?.toString() ?? '',
-      texto: j['texto']?.toString() ?? '',
-      imagem: _imagemOpcional(j['imagem']),
-      proporcaoImagem: _proporcaoImagem(j['proporcaoImagem']),
-
-      motivoEscolha: j['motivoEscolha']?.toString() ?? '',
-
-      personagem: j['personagem']?.toString() ?? '',
-      motivoPersonagem: j['motivoPersonagem']?.toString() ?? '',
-      imagemPersonagem: _imagemOpcional(j['imagemPersonagem']),
-
-      objeto: j['objeto']?.toString() ?? '',
-      motivoObjeto: j['motivoObjeto']?.toString() ?? '',
-      imagemObjeto: _imagemOpcional(j['imagemObjeto']),
-
-      topicos: _listaMapasSegura(j['topicos'])
+      titulo: json['titulo']?.toString() ?? '',
+      texto: json['texto']?.toString() ?? '',
+      imagem: _imagemOpcional(json['imagem']),
+      proporcaoImagem: _proporcaoImagem(json['proporcaoImagem']),
+      motivoEscolha: json['motivoEscolha']?.toString() ?? '',
+      personagem: json['personagem']?.toString() ?? '',
+      motivoPersonagem: json['motivoPersonagem']?.toString() ?? '',
+      imagemPersonagem: _imagemOpcional(json['imagemPersonagem']),
+      objeto: json['objeto']?.toString() ?? '',
+      motivoObjeto: json['motivoObjeto']?.toString() ?? '',
+      imagemObjeto: _imagemOpcional(json['imagemObjeto']),
+      topicos: _listaMapasSegura(json['topicos'])
           .map((item) => Topico.fromJson(item))
           .toList(),
-
-      mecanicas: _listaMapasSegura(j['mecanicas']),
+      mecanicas: _listaMapasSegura(json['mecanicas']),
     );
   }
 }
 
 class PaginaSimples {
   final String titulo;
-  final String? imagemHeader;
+  final String imagemHeader;
   final List<Secao> secoes;
   final List<Map<String, dynamic>> professores;
   final List<Map<String, dynamic>> creditosIntegrantes;
 
-  const PaginaSimples({
-    this.titulo = '',
-    this.imagemHeader,
-    this.secoes = const [],
+  PaginaSimples({
+    required this.titulo,
+    required this.imagemHeader,
+    required this.secoes,
     this.professores = const [],
     this.creditosIntegrantes = const [],
   });
 
-  factory PaginaSimples.fromJson(Map<String, dynamic> j) {
-    final secoesJson = _listaMapasSegura(j['secoes']);
+  factory PaginaSimples.fromJson(Map<String, dynamic> json) {
+    final secoesJson = _listaMapasSegura(json['secoes']);
 
-    final primeiraSecao = secoesJson.isNotEmpty
-        ? secoesJson.first
-        : <String, dynamic>{};
+    final professoresJson = <Map<String, dynamic>>[];
+    final integrantesJson = <Map<String, dynamic>>[];
+
+    for (final secao in secoesJson) {
+      professoresJson.addAll(
+        _listaMapasSegura(secao['professores']),
+      );
+
+      integrantesJson.addAll(
+        _listaMapasSegura(secao['integrantes']),
+      );
+    }
 
     return PaginaSimples(
-      titulo: j['titulo']?.toString() ?? '',
-      imagemHeader: _imagemOpcional(j['imagemHeader']),
-
+      titulo: json['titulo']?.toString() ?? '',
+      imagemHeader: json['imagemHeader']?.toString() ?? '',
       secoes: secoesJson
           .map((item) => Secao.fromJson(item))
           .toList(),
-
-      professores: _listaMapasSegura(
-        j['professores'] ?? primeiraSecao['professores'],
-      ),
-
-      creditosIntegrantes: _listaMapasSegura(
-        j['creditosIntegrantes'] ??
-            primeiraSecao['creditosIntegrantes'],
-      ),
+      professores: professoresJson,
+      creditosIntegrantes: integrantesJson,
     );
   }
 }
@@ -162,66 +151,44 @@ class PaginaSimples {
 class Integrante {
   final String nome;
   final String cargo;
-  final String area;
   final String texto;
   final String? foto;
 
-  const Integrante({
-    this.nome = '',
-    this.cargo = '',
-    this.area = 'JOGOS',
+  Integrante({
+    required this.nome,
+    required this.cargo,
     this.texto = '',
     this.foto,
   });
 
-  factory Integrante.fromJson(Map<String, dynamic> j) {
+  factory Integrante.fromJson(Map<String, dynamic> json) {
     return Integrante(
-      nome: j['nome']?.toString() ?? '',
-      cargo: j['cargo']?.toString() ?? '',
-      area: j['area']?.toString() ?? 'JOGOS',
-      texto: j['texto']?.toString() ?? '',
-      foto: _imagemOpcional(j['foto']),
+      nome: json['nome']?.toString() ?? '',
+      cargo: json['cargo']?.toString() ?? '',
+      texto: json['texto']?.toString() ?? '',
+      foto: _imagemOpcional(json['foto']),
     );
   }
 }
 
 class EquipeDados {
   final String titulo;
-  final String? imagemHeader;
+  final String imagemHeader;
   final List<Integrante> integrantes;
 
-  const EquipeDados({
-    this.titulo = '',
-    this.imagemHeader,
-    this.integrantes = const [],
+  EquipeDados({
+    required this.titulo,
+    required this.imagemHeader,
+    required this.integrantes,
   });
 
-  // Integrantes de Jogos
-  List<Integrante> get integrantesJogos {
-    return integrantes
-        .where(
-          (integrante) =>
-              integrante.area.trim().toUpperCase() == 'JOGOS',
-        )
-        .toList();
-  }
+  factory EquipeDados.fromJson(Map<String, dynamic> json) {
+    final integrantesJson = _listaMapasSegura(json['integrantes']);
 
-  // Integrantes de Desenvolvimento de Sistemas
-  List<Integrante> get integrantesDS {
-    return integrantes
-        .where(
-          (integrante) =>
-              integrante.area.trim().toUpperCase() == 'DS',
-        )
-        .toList();
-  }
-
-  factory EquipeDados.fromJson(Map<String, dynamic> j) {
     return EquipeDados(
-      titulo: j['titulo']?.toString() ?? '',
-      imagemHeader: _imagemOpcional(j['imagemHeader']),
-
-      integrantes: _listaMapasSegura(j['integrantes'])
+      titulo: json['titulo']?.toString() ?? '',
+      imagemHeader: json['imagemHeader']?.toString() ?? '',
+      integrantes: integrantesJson
           .map((item) => Integrante.fromJson(item))
           .toList(),
     );
@@ -229,46 +196,49 @@ class EquipeDados {
 }
 
 class BotaoHome {
-  final String rotulo;
-  final String icone;
-  final String rota;
+  final String titulo;
+  final String destino;
 
-  const BotaoHome({
-    this.rotulo = '',
-    this.icone = '',
-    this.rota = '',
+  BotaoHome({
+    required this.titulo,
+    required this.destino,
   });
 
-  factory BotaoHome.fromJson(Map<String, dynamic> j) {
+  factory BotaoHome.fromJson(Map<String, dynamic> json) {
     return BotaoHome(
-      rotulo: j['rotulo']?.toString() ?? '',
-      icone: j['icone']?.toString() ?? '',
-      rota: j['rota']?.toString() ?? '',
+      titulo: json['titulo']?.toString() ?? '',
+      destino: json['destino']?.toString() ?? '',
     );
   }
 }
 
 class HomeDados {
-  final List<String> fotos;
+  final String titulo;
+  final String? imagemHeader;
   final String tituloDescubra;
+  final List<String> imagens;
   final List<BotaoHome> botoes;
 
-  const HomeDados({
-    this.fotos = const [],
-    this.tituloDescubra = '',
-    this.botoes = const [],
+  HomeDados({
+    required this.titulo,
+    this.imagemHeader,
+    required this.tituloDescubra,
+    required this.imagens,
+    required this.botoes,
   });
 
-  factory HomeDados.fromJson(Map<String, dynamic> j) {
+  factory HomeDados.fromJson(Map<String, dynamic> json) {
+    final imagensJson = json['imagens'];
+    final botoesJson = json['botoes'];
+
     return HomeDados(
-      fotos: (j['fotos'] as List? ?? [])
-          .whereType<String>()
-          .toList(),
-
-      tituloDescubra:
-          j['tituloDescubra']?.toString() ?? '',
-
-      botoes: _listaMapasSegura(j['botoes'])
+      titulo: json['titulo']?.toString() ?? '',
+      imagemHeader: _imagemOpcional(json['imagemHeader']),
+      tituloDescubra: json['tituloDescubra']?.toString() ?? '',
+      imagens: imagensJson is List
+          ? imagensJson.map((item) => item.toString()).toList()
+          : [],
+      botoes: _listaMapasSegura(botoesJson)
           .map((item) => BotaoHome.fromJson(item))
           .toList(),
     );
@@ -276,46 +246,39 @@ class HomeDados {
 }
 
 class Conteudo {
-  final String appTitulo;
+  final Map<String, dynamic> app;
   final HomeDados home;
   final PaginaSimples empresa;
   final PaginaSimples jogo;
   final EquipeDados equipe;
   final PaginaSimples creditos;
 
-  const Conteudo({
-    this.appTitulo = '',
-    this.home = const HomeDados(),
-    this.empresa = const PaginaSimples(),
-    this.jogo = const PaginaSimples(),
-    this.equipe = const EquipeDados(),
-    this.creditos = const PaginaSimples(),
+  Conteudo({
+    required this.app,
+    required this.home,
+    required this.empresa,
+    required this.jogo,
+    required this.equipe,
+    required this.creditos,
   });
 
-  factory Conteudo.fromJson(Map<String, dynamic> j) {
-    final app = _mapaSegura(j['app']);
-
+  factory Conteudo.fromJson(Map<String, dynamic> json) {
     return Conteudo(
-      appTitulo: app['titulo']?.toString() ?? '',
-
+      app: _mapaSegura(json['app']),
       home: HomeDados.fromJson(
-        _mapaSegura(j['home']),
+        _mapaSegura(json['home']),
       ),
-
       empresa: PaginaSimples.fromJson(
-        _mapaSegura(j['empresa']),
+        _mapaSegura(json['empresa']),
       ),
-
       jogo: PaginaSimples.fromJson(
-        _mapaSegura(j['jogo']),
+        _mapaSegura(json['jogo']),
       ),
-
       equipe: EquipeDados.fromJson(
-        _mapaSegura(j['equipe']),
+        _mapaSegura(json['equipe']),
       ),
-
       creditos: PaginaSimples.fromJson(
-        _mapaSegura(j['creditos']),
+        _mapaSegura(json['creditos']),
       ),
     );
   }

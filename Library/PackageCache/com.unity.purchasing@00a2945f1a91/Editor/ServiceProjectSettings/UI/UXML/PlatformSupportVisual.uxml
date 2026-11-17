@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="EditorSetupBlock" class="editor-setup">
+        <ui:VisualElement class="editor-setup-header">
+            <ui:Label text="Editor setup" class="editor-setup-title" />
+            <ui:Button name="JumpToBuildSettingsButton" text="Jump to Build Profiles" class="editor-setup-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CurrentBuildTargetSection" class="editor-setup-row">
+            <ui:Label text="Current build target" class="editor-setup-label" />
+            <ui:Label class="editor-setup-value" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CurrentStoreSection" class="editor-setup-row">
+            <ui:Label text="Current targeted store" class="editor-setup-label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="SupportedStoresSection" class="editor-setup-row">
+            <ui:Label text="Supported stores" class="editor-setup-label" />
+            <ui:Label class="editor-setup-value" />
+        </ui:VisualElement>
+        <ui:VisualElement name="OtherStoresSection" class="editor-setup-row">
+            <ui:Label text="Other supported stores" class="editor-setup-label" />
+            <ui:Label class="editor-setup-value" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

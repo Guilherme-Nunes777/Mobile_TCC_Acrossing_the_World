@@ -14,13 +14,7 @@ class EquipePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final integrantes = dados.integrantes
-        .where(
-          (integrante) =>
-              integrante.nome.trim().isNotEmpty ||
-              integrante.cargo.trim().isNotEmpty,
-        )
-        .toList();
+    final integrantes = dados.integrantes;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -32,7 +26,6 @@ class EquipePage extends StatelessWidget {
               titulo: dados.titulo,
               imagem: dados.imagemHeader,
             ),
-
             Padding(
               padding: const EdgeInsets.fromLTRB(
                 20,
@@ -51,9 +44,7 @@ class EquipePage extends StatelessWidget {
                       color: Color(0xFF252525),
                     ),
                   ),
-
                   const SizedBox(height: 6),
-
                   Text(
                     'Conheça as pessoas por trás do projeto.',
                     style: TextStyle(
@@ -64,7 +55,6 @@ class EquipePage extends StatelessWidget {
                 ],
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.fromLTRB(
                 20,

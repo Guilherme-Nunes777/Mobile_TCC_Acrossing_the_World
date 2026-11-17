@@ -1,0 +1,12 @@
+<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement name="AISkillsBlock" class="editor-setup ai-skills-block">
+        <VisualElement class="editor-setup-row">
+            <Label text="Local directory" class="editor-setup-title editor-setup-label"/>
+            <Button name="OpenSkillsFolderButton" text="Open skills folder" class="ai-skills-button"/>
+        </VisualElement>
+        <VisualElement name="ClaudeCodeRow" class="editor-setup-row">
+            <Label text="Claude Code" class="editor-setup-title editor-setup-label"/>
+            <Button name="InstallSkillsButton" text="Install to Claude Code" class="ai-skills-button"/>
+        </VisualElement>
+    </VisualElement>
+</UXML>

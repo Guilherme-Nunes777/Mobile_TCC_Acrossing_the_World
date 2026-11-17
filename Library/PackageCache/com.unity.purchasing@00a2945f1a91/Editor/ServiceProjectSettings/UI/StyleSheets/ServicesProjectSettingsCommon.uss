@@ -1,0 +1,985 @@
+.project-settings-header-container {
+    flex-direction:row;
+}
+
+.project-settings-service-specific-container {
+    flex-grow:1;
+}
+
+.service-toggle-container {
+    width:75px;
+    height:75px;
+    justify-content:center;
+}
+
+.service-toggle-container > .unity-toggle {
+    width:38px;
+}
+
+.service-toggle-container > .unity-toggle > .unity-toggle__input
+{
+    cursor:link;
+    width:38px;
+    flex-grow:0;
+    justify-content:center;
+}
+
+.service-toggle-container > .unity-toggle > .unity-toggle__input > .unity-toggle__text
+{
+    border-width:1px;
+    border-radius:3px;
+    font-size:14px;
+    cursor:link;
+    padding:1px 3px 1px 2px;
+}
+
+.service-toggle-container > .unity-toggle > .unity-toggle__input > .unity-toggle__checkmark
+{
+    background-image:initial;
+    width:0px;
+}
+
+.service-toggle-container > .unity-toggle > .unity-toggle__input:checked > .unity-toggle__checkmark
+{
+    background-image:initial;
+}
+
+.project-settings-title-container,
+.project-settings-section-container {
+    padding:4px 8px 4px 8px;
+    flex-direction:column;
+    flex-wrap:wrap;
+}
+
+.project-settings-title{
+    font-size:16px;
+    -unity-font-style:bold;
+}
+
+.project-settings-subtitle{
+    font-size:14px;
+    -unity-font-style:bold;
+}
+
+.project-settings-title-container.main-title {
+    flex-direction:row;
+}
+.project-settings-title-container.description{
+    flex-direction:column;
+}
+
+.multi-field-block,
+.field-block {
+    padding:0 0 0 10px;
+    flex-grow:1;
+    flex-direction:column;
+}
+
+.field-block .field-name {
+    -unity-font-style:bold;
+    padding-bottom:5px;
+}
+
+.field-block .button-container {
+    padding-top:10px;
+    flex-direction:row;
+}
+
+.multi-field-block .link-button-container,
+.field-block .link-button-container {
+    padding-top:0px;
+    flex-direction:row;
+}
+
+.field-block.link-button {
+    padding-left:10px;
+}
+
+.center-middle-block {
+    align-items:center;
+}
+
+.connecting-services-container,
+.offline-container,
+.logged-out-container {
+    padding-top:50px;
+}
+
+.center-middle-block > #RefreshBtn,
+.center-middle-block > #SignInBtn {
+    margin-top:20px;
+}
+
+.connecting-services-icon {
+    background-image:resource("Icons/console.infoicon.png");
+    width:32px;
+    height:32px;
+}
+
+.offline-icon,
+.logged-out-icon {
+    background-image:resource("Icons/console.warnicon.png");
+    width:32px;
+    height:32px;
+}
+
+.connecting-services-message,
+.offline-message,
+.logged-out-message {
+    font-size:30px;
+    width:210px;
+    padding-top:20px;
+    -unity-text-align:upper-center;
+}
+
+.label-container {
+    flex-direction:row;
+    align-items:flex-start;
+}
+
+.link-button {
+    flex-grow:0;
+    align-self:flex-start;
+    padding:5px 5px 5px 0px;
+    cursor:link;
+    flex-direction:row;
+    background-color:rgba(0, 0, 0, 0);
+    border-color:rgba(0, 0, 0, 0);
+    margin-top:0px;
+    margin-bottom:0px;
+    border-width:0px;
+}
+
+.link-button:hover {
+    background-color:rgba(0, 0, 0, 0);
+    border-color:rgba(0, 0, 0, 0);
+}
+
+.link-button > .unity-text-element {
+    cursor:link;
+    flex-grow:0;
+}
+
+.link-button:hover > .unity-text-element {
+    cursor:link;
+}
+
+.multi-field-block .title {
+    -unity-font-style:bold;
+}
+
+.multi-field-block .title,
+.multi-field-block .description {
+    padding-left:0;
+    padding-bottom:5px;
+    padding-top:5px;
+    white-space:normal;
+}
+
+.multi-field-block .button-container {
+    flex-direction:row;
+}
+
+.platform-tag{
+    -unity-font-style:bold;
+    margin-left:4px;
+    margin-bottom:4px;
+}
+
+.note-tag{
+    white-space:normal;
+    flex-direction:row;
+    align-items:flex-start;
+    align-self:flex-start;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+
+.platform-tag,
+.note-tag{
+    border-radius:2px;
+    padding:2px 5px;
+}
+
+.multi-field-block .tag-container {
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+.multi-field-block .bullet-container {
+    flex-direction:column;
+}
+
+.bullet-item {
+    padding-left:20px;
+    padding-bottom:1px;
+}
+.field-block.link-button.bullet-item {
+    padding-left:20px;
+    padding-top:0px;
+    padding-bottom:1px;
+}
+
+.numbered-item {
+    white-space:normal;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.multi-field-block .link-button-container,
+.field-block .link-button-container {
+    padding-top:0px;
+    flex-direction:row;
+}
+
+.multi-field-block .edit-mode .link-button-container .link-button,
+.field-block .edit-mode .link-button-container .link-button {
+    flex-direction:row-reverse;
+    padding-top:0;
+}
+
+.multi-field-block .edit-mode .link-button-container,
+.multi-field-block .edit-mode .button-container,
+.field-block .edit-mode .link-button-container,
+.field-block .edit-mode .button-container {
+    flex-direction:row-reverse;
+}
+
+.field-block.link-button {
+    padding-left:10px;
+}
+
+.button-container > .link-button {
+    padding:0px 5px 0px 0px;
+}
+
+.link-button:hover {
+    background-color:rgba(0, 0, 0, 0);
+    border-color:rgba(0, 0, 0, 0);
+}
+
+.link-button > .unity-text-element {
+    cursor:link;
+    flex-grow:0;
+}
+
+.link-button:hover > .unity-text-element {
+    cursor:link;
+    color:#81B4FF; /*from dark.uss --unity-active-text-color*/
+}
+
+.info-icon {
+    align-self:center;
+    width:16px;
+    height:16px;
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-InfoTooltip.png");
+}
+
+.multi-field-block .title {
+    -unity-font-style:bold;
+}
+
+.invisible-separator,
+.separator {
+    margin-top:5px;
+    margin-bottom:5px;
+    height:2px;
+}
+
+/* Addition from the Ads Service */
+.ads .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Ads.png");
+}
+
+.label-container {
+    white-space:normal;
+    padding-top:5px;
+}
+
+.external-link-icon {
+    margin-left: 0px;
+}
+
+.service-link-button,
+.field-block.link-button {
+    border-width:0px;
+    -unity-text-align:middle-left;
+    align-self:flex-start;
+    padding-left:1px;
+    padding-right:2px;
+    margin-left:1px;
+    margin-right:1px;
+    background-color:rgba(0, 0, 0, 0);
+    cursor:link;
+    flex-grow:0;
+}
+
+.link-container-integrated {
+    flex-direction: row;
+    padding-left: 4px;
+}
+
+.toggle-section {
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.package-info-display {
+    flex-direction:row;
+    justify-content:space-between;
+}
+.package-info {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+#GoToDashboard,
+#GettingStarted,
+#GoToWebDashboard {
+    padding-left:0px;
+    margin-left:1px;
+}
+
+#GoToPackManButton,
+#InstallLatestVersion {
+    flex-grow:0;
+    width:160px;
+}
+#GoToPackManUIDisplay {
+    margin-top:10px;
+    margin-bottom:10px;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+#InstallLatestVersion,
+#SameVersionInfo {
+    align-self:flex-end;
+}
+
+/* Additions from the CloudDiag Service */
+.clouddiag .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Crash.png");
+}
+
+.clouddiag #LearnMore, .collab #LearnMore,
+.cloudbuild #LearnMore {
+    margin-right:10px;
+    align-self:flex-end;
+}
+
+#CrashCapturePlayMode {
+    margin-left:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#CrashLogCount {
+    margin-left:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    max-width:250px;
+}
+
+
+/* Additions from the Collab Service */
+.collab .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Collab.png");
+}
+
+/* Additions from the Analytics Service */
+.analytics .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Analytics.png");
+}
+
+.play-image {
+    width:400px;
+    height:180px;
+}
+
+.pre-check-icon,
+.check-icon {
+    padding-right:10px;
+    width:35px;
+    height:35px;
+    flex-shrink:0;
+}
+
+.integrated-check-icon {
+    padding-right:10px;
+    width:40px;
+    height:40px;
+    flex-shrink:0;
+    background-image:resource("Builtin Skins/Shared/Images/integratedCheckLg.png");
+}
+
+.pre-check-icon {
+    background-image:resource("Builtin Skins/Shared/Images/icon_pre-checked.png");
+}
+
+.check-icon {
+    background-image:resource("Builtin Skins/Shared/Images/icon_checked.png");
+}
+
+.table {
+    flex-direction:column;
+}
+
+.table-header-row,
+.table-row {
+    flex-direction:row;
+    flex-wrap:nowrap;
+    padding:2px 0px;
+}
+
+.table-header {
+    -unity-font-style:bold;
+    min-width:96px;
+    flex-grow:1;
+    flex-shrink:1;
+}
+
+.table-header,
+.table-item {
+    min-height:32px;
+    padding:0px 10px;
+    margin:2px;
+    -unity-text-align:middle-left;
+    white-space:normal;
+}
+
+/* Additions from the Multiplayer Service */
+.multiplayer .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Unet.png");
+}
+
+.configuration-container {
+    margin:10px;
+}
+
+.mp-config-tag-container {
+    margin-top:2px;
+    padding-left:5px;
+    padding-right:5px;
+    flex-direction:row;
+}
+
+.mp-config-tag-title {
+    -unity-font-style:bold;
+    min-width:200px;
+    padding-left:5px;
+    flex-grow:1;
+    -unity-text-align:middle-left;
+    min-height:25px;
+}
+
+.mp-config-tag {
+    margin-left:10px;
+    margin-right:10px;
+    -unity-text-align:middle-left;
+    min-height:25px;
+    width:100px;
+}
+
+.refresh-button {
+    align-self:flex-start;
+}
+
+#CurrentConfiguration {
+    padding-left:10px;
+    padding-top:10px;
+}
+
+/* Additions from the Purchasing Service */
+.purchasing .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Purchasing.png");
+}
+
+.multiline-field-value {
+    white-space:normal;
+    width:256px;
+}
+
+.warning-label-container {
+    flex-direction:row;
+}
+
+.warning-message {
+    padding-left:0;
+    padding-bottom:10px;
+    white-space:normal;
+    flex-shrink:1;
+}
+
+.warning-info-icon2x {
+    padding-right:5px;
+    width:32px;
+    height:32px;
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-InfoTooltip@2x.png");
+    flex-shrink:0;
+}
+
+/* AI Skills tab */
+/* Layout, label column and row pitch come from the .editor-setup* classes. The tab host already
+   spaces content below the tab bar, so drop .editor-setup's own top padding. */
+.editor-setup.ai-skills-block {
+    padding-top:0;
+}
+
+/* Default-height buttons fill the row, so the rows need their own spacing to keep the buttons apart. */
+.ai-skills-block .editor-setup-row {
+    margin-bottom:3px;
+}
+
+/* Fixed width so both buttons line up as one column, as in the design. */
+.ai-skills-button {
+    width:150px;
+    margin:0;
+}
+/* Additions from the CloudBuild Service */
+.cloudbuild .service-icon {
+    background-image:resource("Builtin Skins/Shared/Images/ServicesWindow-ServiceIcon-Build.png");
+}
+
+.cloud-progress {
+    -unity-text-align:middle-center;
+    font-size:18px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.target-container-title {
+    margin:10px 0px 10px 8px;
+    font-size:16px;
+}
+
+.target-entry {
+    flex-direction:row;
+    padding:5px 0px 5px 8px;
+}
+
+.target-entry .title {
+    flex-grow:1;
+    -unity-text-align:middle-left;
+}
+
+.target-entry .build-button {
+    align-self:flex-end;
+}
+
+.target-footer {
+    padding-top:5px;
+    flex-direction:row;
+    justify-content:flex-end;
+}
+
+#StartUsingCloudBuild {
+    margin-left:8px;
+    white-space:nowrap;
+}
+
+#PollFooter {
+    display:none;
+}
+
+/* Service cards */
+/* Cards space themselves with their own margins, so the wrapper adds none and every card gap is the same. */
+#GoogleConfigBlock {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.configuration-item {
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 4px 0;
+}
+
+.configuration-item-header {
+    flex-direction: row;
+    align-items: center;
+}
+
+.configuration-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* --unity-image rather than background-image: the Image element draws it inside the padding, which insets the
+   full-bleed Coda and Stripe art like the logos on the other tiles. */
+.configuration-icon.google-play {
+    --unity-image: url("/Packages/com.unity.purchasing/Icons/Icon-GooglePlay.png");
+}
+
+.configuration-icon.stripe {
+    --unity-image: url("/Packages/com.unity.purchasing/Icons/Icon-Stripe.png");
+    padding: 11px;
+}
+
+.configuration-icon.coda {
+    --unity-image: url("/Packages/com.unity.purchasing/Icons/Icon-Coda.png");
+    padding: 9px;
+}
+
+/* Top-aligned with the icon, not centred: a two-line description grows downwards like in the design. */
+.configuration-info {
+    align-self: flex-start;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0 12px 0 10px;
+}
+
+.configuration-name {
+    -unity-font-style: bold;
+    flex-direction: row;
+    align-items: center;
+}
+
+.configuration-name > .unity-label {
+    margin: 0;
+    padding: 0;
+}
+
+.configuration-description {
+    font-size: 11px;
+    margin: 4px 0 0 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.configuration-badge {
+    display: none;
+    flex-shrink: 0;
+    margin-left: 4px;
+    padding: 0 4px;
+    border-width: 1px;
+    border-radius: 3px;
+    -unity-font-style: normal;
+}
+
+.configuration-badge.visible {
+    display: flex;
+}
+
+.configuration-badge > .unity-label {
+    font-size: 9px;
+    margin: 0;
+    padding: 1px 0;
+}
+
+/* Drawn rather than the editor's console info icon, which is an exclamation mark, not the design's "i". */
+.configuration-info-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.configuration-info-icon > .unity-label {
+    font-size: 9px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin: 0;
+    padding: 0;
+}
+
+/* A solid chevron drawn from two borders: right-pointing when collapsed, pointing down when open. */
+.configuration-toggle {
+    width: 9px;
+    height: 9px;
+    margin: 0 6px 0 5px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    flex-shrink: 0;
+    rotate: -45deg;
+}
+
+.configuration-item.expanded .configuration-toggle {
+    rotate: 45deg;
+}
+
+.configuration-item-body {
+    display: none;
+    margin-top: 16px;
+}
+
+.configuration-item.expanded .configuration-item-body {
+    display: flex;
+}
+
+.configuration-body-title {
+    font-size: 15px;
+    margin: 0 0 6px 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.configuration-list {
+    margin-left: 5px;
+}
+
+.configuration-list-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.configuration-list-item {
+    margin: 0;
+    padding: 1px 0;
+    white-space: normal;
+}
+
+/* Labels drop the trailing space of the text before the link. */
+.configuration-link {
+    cursor: link;
+    margin-left: 3px;
+}
+
+.configuration-note {
+    font-size: 11px;
+    margin: 14px 0 0 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.configuration-caption {
+    font-size: 11px;
+    margin: 0 0 6px 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.configuration-fine-print {
+    font-size: 10px;
+    margin: 4px 0 6px 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.configuration-key-field {
+    margin: 0;
+}
+
+.configuration-key-field > .unity-base-text-field__input {
+    min-height: 24px;
+    -unity-text-align: middle-left;
+    overflow: hidden;
+}
+
+.configuration-buttons {
+    flex-direction: row;
+}
+
+.configuration-button {
+    width: 220px;
+    margin: 0 10px 0 0;
+    flex-shrink: 1;
+}
+
+/* The design's help boxes carry a small inline icon, not the 32px default. */
+.configuration-help-box {
+    margin: 0;
+    align-items: flex-start;
+    padding: 6px 8px;
+    min-height: 0;
+}
+
+/* The default icon keeps a 32px minimum, which would make a one-line box twice its text height. */
+.configuration-help-box > .unity-help-box__icon {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0 6px 0 0;
+}
+
+.configuration-help-box > .unity-help-box__label {
+    font-size: 11px;
+    min-height: 0;
+    margin: 1px 0 0 0;
+    padding: 0;
+    -unity-text-align: upper-left;
+}
+
+.configuration-inline-error {
+    margin-top: 12px;
+}
+
+.configuration-status {
+    margin-top: 8px;
+}
+
+/* The label claims most of the row, so the button wraps onto its own line under it, pushed right. */
+.missing-key-box {
+    flex-wrap: wrap;
+}
+
+.missing-key-box > .unity-help-box__label {
+    flex-basis: 85%;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.missing-key-box > .unity-button {
+    margin: 4px 0 0 auto;
+}
+
+.ignore-warning-toggle {
+    margin: 12px 0 14px 0;
+}
+
+.ignore-warning-toggle .unity-toggle__text {
+    margin-left: 4px;
+    font-size: 11px;
+}
+
+.unlinked-features-heading {
+    -unity-font-style: bold;
+    margin: 8px 0;
+}
+
+.unlinked-feature {
+    padding: 14px 16px;
+}
+
+.unlinked-feature-title {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.unlinked-feature-description {
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+}
+
+/* Apple and Xbox cards */
+/* The cards' own margins space them; the container's vertical padding would double the gap. */
+#AppleConfigBlock,
+#XboxConfigBlock {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Flush with the info box edges above them. */
+.xbox-field {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Built-in platform icons fill their texture edge to edge; the padding gives the logo the tile margin of the other cards. */
+.configuration-icon.store-icon {
+    padding: 8px;
+}
+
+.configuration-caption.apple-note {
+    margin-bottom: 10px;
+}
+
+.configuration-help-box.xbox-cloud-code-note {
+    margin-bottom: 10px;
+}
+
+.xbox-field > .unity-base-field__label {
+    min-width: 200px;
+}
+
+/* Page layout: header, tabs and sections */
+.iap-tab-bar {
+    flex-direction: row;
+    margin: 26px 8px 22px 8px;
+}
+
+.iap-tab {
+    padding: 0 18px 2px 18px;
+    margin: 0;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(0, 0, 0, 0);
+    -unity-text-align: middle-center;
+    cursor: link;
+}
+
+/* Dimmed like Unity's disabled controls, but still hoverable so its tooltip shows. */
+.iap-tab--unavailable {
+    opacity: 0.5;
+}
+
+/* Blocks bring their own 8px side padding, so the shell's own rows add the same to line up with them. */
+.iap-tab-content {
+    padding: 0 0 12px 0;
+}
+
+.iap-nav-buttons {
+    flex-direction: row;
+    margin: 0 8px 6px 8px;
+}
+
+.iap-nav-button {
+    margin: 0 8px 0 0;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* On the card column, 2px like Core's own header divider. */
+.iap-section-separator {
+    margin: 22px 8px 26px 8px;
+    height: 2px;
+}
+
+.iap-section-heading {
+    -unity-font-style: bold;
+    padding: 0;
+    margin: 0 8px 2px 8px;
+}
+
+/* Sized like the card descriptions, which share the same colour. */
+.iap-section-text {
+    font-size: 11px;
+    white-space: normal;
+    padding: 0;
+    margin: 7px 8px 0 8px;
+}
+
+.iap-section-button {
+    align-self: flex-start;
+    margin: 8px 8px 0 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.iap-unlinked-features {
+    padding: 0 8px;
+}
+
+.iap-unlinked-features .unlinked-features-heading {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.iap-unlinked-features .separator {
+    height: 2px;
+}
+
+/* The divider closing the features list sits midway between the last card and the tab titles. */
+.iap-unlinked-features > #UnlinkedFeatures > .separator {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.iap-unlinked-tabs > .iap-tab-bar {
+    margin-top: 20px;
+}
+
+/* Cancels the Google Play block's own top padding and card margin, so its card edge sits at the same gap under the tab bar as every other tab's first content. */
+.iap-unlinked-setup-tab {
+    margin-top: -8px;
+}

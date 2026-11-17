@@ -1,0 +1,567 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.5/staging' branch; Version is '6000.5.7f1 (017862109af0) revision 96354'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'pt' Physical Memory: 16106 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-11-13T10:57:25.3983701Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-13T10:57:25Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 22112, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              61ba1e210fb84d8180699805453edb3c
+  Correlation Id:          83f68c550cd8cf1d2797f1c61e42e459
+  External correlation Id: 8974470198375577500
+  Machine Id:              H847dohVFxvJtpdBLkLc85DpV0c=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User" (connect: 0.00s, validation: 0.00s, handshake: 0.06s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-notifications" at "2026-11-13T10:57:25.4653976Z"
+[Licensing::Module] Licensing Background thread has ended after 0.07s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.5.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorkerHW1
+-projectPath
+C:/Users/User/Downloads/Mobile_TCC_Acrossing_the_World
+-logFile
+Logs/AssetImportWorkerHW1.log
+-srvPort
+56602
+-parentPid
+12692
+-analyticsCloudUserId
+4674080154075
+-analyticsLocalProjectId
+2b80448687a42484e9336785845988e5
+-editorAnalyticsEnabled
+1
+-cbmEditorLicense
+4bdb8a71d84b1c934be5c9397b3ff556fb275e32
+-cbmMachineId
+H847dohVFxvJtpdBLkLc85DpV0c=
+-licensingIpc
+LicenseClient-User
+-noDiagnosticSwitchPersistentStore
+-job-worker-count
+3
+-background-job-worker-count
+8
+-asset-garbage-collectors
+1
+-force-d3d12
+-name
+AssetImport
+Successfully changed project path to: C:/Users/User/Downloads/Mobile_TCC_Acrossing_the_World
+C:/Users/User/Downloads/Mobile_TCC_Acrossing_the_World
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=0"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [19788]  Target information:
+
+Player connection [19788]  * "[IP] 192.168.15.15 [Port] 0 [Flags] 2 [Guid] 2040491336 [EditorId] 2040491336 [Version] 1048832 [Id] WindowsEditor(7,NTB-GUI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19788] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19788] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 3
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.5.7f1 (017862109af0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/User/Downloads/Mobile_TCC_Acrossing_the_World/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce MX350 (ID=0x1c94)
+    Vendor:          NVIDIA
+    VRAM:            1964 MB
+    App VRAM Budget: 1669 MB
+    Driver:          32.0.15.7683
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56552
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.5.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003998 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.497 seconds
+Domain Reload Profiling: 1504ms
+	BeginReloadAssembly (287ms)
+	RebuildCommonClasses (10ms)
+	RebuildNativeTypeToScriptingClass (37ms)
+	initialDomainReloadingComplete (158ms)
+	LoadAllAssembliesAndSetupDomain (513ms)
+		LoadAssemblies (276ms)
+		AnalyzeDomain (425ms)
+			TypeCache.Refresh (423ms)
+				TypeCache.ScanAssembly (400ms)
+	FinalizeReload (499ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (120ms)
+			ProcessInitializeOnLoadAttributes (153ms)
+			ProcessInitializeOnLoadMethodAttributes (132ms)
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 4674080154075-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.372 seconds
+Domain Reload Profiling: 741ms
+	BeginReloadAssembly (192ms)
+		DisableScriptedObjects (10ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (9ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (105ms)
+		LoadAssemblies (100ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (4ms)
+	FinalizeReload (374ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (86ms)
+			ProcessInitializeOnLoadAttributes (73ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
+			AfterProcessingInitializeOnLoad (9ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+AcceleratorClientConnectionCallback - disconnected - :0
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Curl error 3: URL rejected: Malformed input to a URL function
+Unloading 64 unused Assets / (30.4 KB). Loaded Objects now: 672.
+Memory consumption went from 155.6 MB to 155.5 MB.
+Total: 3.996100 ms (FindLiveObjects: 0.046000 ms CreateObjectMapping: 0.017400 ms MarkObjects: 3.771700 ms  DeleteObjects: 0.158300 ms)
+
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2429 unused Assets / (0.7 MB). Loaded Objects now: 3036.
+Memory consumption went from 167.6 MB to 166.9 MB.
+Total: 7.958500 ms (FindLiveObjects: 0.395400 ms CreateObjectMapping: 1.215100 ms MarkObjects: 5.477300 ms  DeleteObjects: 0.869100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 19.12 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+DisplayDialog: Mobile Dependency Resolver required Mediation requires Mobile Dependency Resolver to resolve native dependencies.
+ Would you like to import the package?
+This should not be called in batch mode.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorDialog:DisplayComplexDecisionDialogNative (string,UnityEditor.DialogIconType,string,string,string,string)
+UnityEditor.EditorDialog:DisplayComplexDecisionDialog (string,string,string,string,string,UnityEditor.DialogIconType)
+UnityEditor.EditorUtility:DisplayDialogComplex (string,string,string,string,string)
+Unity.Services.LevelPlay.Editor.MobileDependencyResolverInstaller:AskUserToInstallPackage () (at ./Library/PackageCache/com.unity.services.levelplay@b529b4fae898/Editor/Service/Installers/MobileDependencyResolverInstaller.cs:63)
+Unity.Services.LevelPlay.Editor.MobileDependencyResolverInstaller:InstallPlayServicesResolverIfNeeded () (at ./Library/PackageCache/com.unity.services.levelplay@b529b4fae898/Editor/Service/Installers/MobileDependencyResolverInstaller.cs:36)
+Unity.Services.LevelPlay.Editor.OnLoadService/<OnLoad>d__7:MoveNext () (at ./Library/PackageCache/com.unity.services.levelplay@b529b4fae898/Editor/Service/OnLoadService.cs:50)
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder:Start<Unity.Services.LevelPlay.Editor.OnLoadService/<OnLoad>d__7> (Unity.Services.LevelPlay.Editor.OnLoadService/<OnLoad>d__7&)
+Unity.Services.LevelPlay.Editor.OnLoadService:OnLoad ()
+Unity.Services.LevelPlay.Editor.OnLoadService/<InitializeOnLoad>d__0:MoveNext () (at ./Library/PackageCache/com.unity.services.levelplay@b529b4fae898/Editor/Service/OnLoadService.cs:17)
+System.Runtime.CompilerServices.AsyncVoidMethodBuilder:Start<Unity.Services.LevelPlay.Editor.OnLoadService/<InitializeOnLoad>d__0> (Unity.Services.LevelPlay.Editor.OnLoadService/<InitializeOnLoad>d__0&)
+Unity.Services.LevelPlay.Editor.OnLoadService:InitializeOnLoad ()
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+[./Library/PackageCache/com.unity.services.levelplay@b529b4fae898/Editor/Service/Installers/MobileDependencyResolverInstaller.cs line 63]
+
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.874 seconds
+Domain Reload Profiling: 1746ms
+	BeginReloadAssembly (245ms)
+		DisableScriptedObjects (15ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (10ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (81ms)
+	LoadAllAssembliesAndSetupDomain (513ms)
+		LoadAssemblies (397ms)
+		AnalyzeDomain (122ms)
+			TypeCache.Refresh (76ms)
+				TypeCache.ScanAssembly (58ms)
+			BuildScriptInfoCaches (41ms)
+	FinalizeReload (875ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (122ms)
+			ProcessInitializeOnLoadAttributes (127ms)
+			ProcessInitializeOnLoadMethodAttributes (386ms)
+			AfterProcessingInitializeOnLoad (9ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 16.12 ms, found 0 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2514 unused Assets / (0.7 MB). Loaded Objects now: 3038.
+Memory consumption went from 188.6 MB to 187.9 MB.
+Total: 6.653200 ms (FindLiveObjects: 0.277800 ms CreateObjectMapping: 0.733400 ms MarkObjects: 4.914500 ms  DeleteObjects: 0.726200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+[Licensing::Client] Successfully resolved entitlement details
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 23.83 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.828 seconds
+Domain Reload Profiling: 1836ms
+	BeginReloadAssembly (291ms)
+		DisableScriptedObjects (14ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (12ms)
+	RebuildNativeTypeToScriptingClass (27ms)
+	initialDomainReloadingComplete (77ms)
+	LoadAllAssembliesAndSetupDomain (599ms)
+		LoadAssemblies (487ms)
+		AnalyzeDomain (137ms)
+			TypeCache.Refresh (79ms)
+				TypeCache.ScanAssembly (68ms)
+			BuildScriptInfoCaches (51ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (830ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (153ms)
+			ProcessInitializeOnLoadAttributes (130ms)
+			ProcessInitializeOnLoadMethodAttributes (267ms)
+			AfterProcessingInitializeOnLoad (16ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 28.64 ms, found 0 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2519 unused Assets / (1.0 MB). Loaded Objects now: 3044.
+Memory consumption went from 192.1 MB to 191.1 MB.
+Total: 10.995200 ms (FindLiveObjects: 0.316400 ms CreateObjectMapping: 0.943400 ms MarkObjects: 8.217000 ms  DeleteObjects: 1.516800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 23.54 ms, found 0 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2434 unused Assets / (1.2 MB). Loaded Objects now: 3044.
+Memory consumption went from 191.6 MB to 190.5 MB.
+Total: 9.285200 ms (FindLiveObjects: 0.451300 ms CreateObjectMapping: 1.104100 ms MarkObjects: 6.219900 ms  DeleteObjects: 1.508000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 22.44 ms, found 0 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2434 unused Assets / (0.7 MB). Loaded Objects now: 3044.
+Memory consumption went from 191.7 MB to 191.1 MB.
+Total: 8.075300 ms (FindLiveObjects: 0.286100 ms CreateObjectMapping: 0.826200 ms MarkObjects: 5.936700 ms  DeleteObjects: 1.024400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 29.15 ms, found 0 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2434 unused Assets / (0.7 MB). Loaded Objects now: 3044.
+Memory consumption went from 191.9 MB to 191.1 MB.
+Total: 9.555100 ms (FindLiveObjects: 0.316400 ms CreateObjectMapping: 0.984700 ms MarkObjects: 7.189600 ms  DeleteObjects: 1.062600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:13.5576838Z
+  Time since last request: 170020.8796166999964 seconds.
+  importAddress: GUID: 656a17371a04ad042b94b8c471bb46aa - Path: Assets/images/Berimbau.png - Importer: PreviewImporter
+Importing 'GUID: 656a17371a04ad042b94b8c471bb46aa - Path: Assets/images/Berimbau.png - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 656a17371a04ad042b94b8c471bb46aa' -> (Import Result ID: 'f83e3278de798432f3f9a8bc71d4d0e9') in 0.699 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=50ae0bd1f892ecaa7c68df296800d996 DependenciesID=f54af4ea1e86dce77c96e88f2ed2a389 StaticDependenciesID=e0ebe5fb830541174c117c2e7b72b657 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.259432Z
+  Time since last request: 0.000133 seconds.
+  importAddress: GUID: f958ce36651e2954aa796638e5087722 - Path: Assets/images/membro_2.jpeg - Importer: PreviewImporter
+Importing 'GUID: f958ce36651e2954aa796638e5087722 - Path: Assets/images/membro_2.jpeg - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: f958ce36651e2954aa796638e5087722' -> (Import Result ID: '7cb4a386ee7889012fd942c4cce94646') in 0.011 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c8a3cac1a0d18c24cd5d0d2dd6fb21a6 DependenciesID=844609d20f311f0d8a909e149bd37561 StaticDependenciesID=943a25676550469475cfdff74bbfbf85 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.2718047Z
+  Time since last request: 0.0005336 seconds.
+  importAddress: GUID: aeea599c77e4a2b459d807e945280895 - Path: Assets/images/header_equipe.jpeg - Importer: PreviewImporter
+Importing 'GUID: aeea599c77e4a2b459d807e945280895 - Path: Assets/images/header_equipe.jpeg - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: aeea599c77e4a2b459d807e945280895' -> (Import Result ID: '8ce4d5e23621d0c6dbb9108957bd601a') in 0.011 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=03dd6719ffb2e1690823aad1ef58f215 DependenciesID=e547e069e0bc609bd5d4873211f2e173 StaticDependenciesID=c770a3cbd9993dfbdc03ebceabf3c58d 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.2836972Z
+  Time since last request: 0.0003593 seconds.
+  importAddress: GUID: 5715693f2d63cba4da2ba48b8c83a2c5 - Path: Assets/images/membro_4.jpeg - Importer: PreviewImporter
+Importing 'GUID: 5715693f2d63cba4da2ba48b8c83a2c5 - Path: Assets/images/membro_4.jpeg - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 5715693f2d63cba4da2ba48b8c83a2c5' -> (Import Result ID: 'ffc436682110ac66bb30a165591ddc64') in 0.010 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6f6b4b4c74e6655beb89f783db12ab56 DependenciesID=64dede8857ab616327c73ba417082883 StaticDependenciesID=ff250d05ccc8ff72af4c200bb922fbbd 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.2945156Z
+  Time since last request: 0.0004462 seconds.
+  importAddress: GUID: 8fbf07688abc6c345a2c58b369d425bc - Path: Assets/images/empresa_historia.png - Importer: PreviewImporter
+Importing 'GUID: 8fbf07688abc6c345a2c58b369d425bc - Path: Assets/images/empresa_historia.png - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 8fbf07688abc6c345a2c58b369d425bc' -> (Import Result ID: '6bfb61f12cab2ea2d8a325d64b55cc81') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c3daaf0dde9147e1c75ede4527c443b9 DependenciesID=575bfcf4a8d2e23ad9a25e41644043bd StaticDependenciesID=79003e0dfa6564538572d504f69ca975 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.3079837Z
+  Time since last request: 0.0006639 seconds.
+  importAddress: GUID: 33eeb906e4bddf6428641c3fd90aca6b - Path: Assets/images/jogo_secao_4.jpeg - Importer: PreviewImporter
+Importing 'GUID: 33eeb906e4bddf6428641c3fd90aca6b - Path: Assets/images/jogo_secao_4.jpeg - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 33eeb906e4bddf6428641c3fd90aca6b' -> (Import Result ID: '45efd8356859d169984f08222fd0406c') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6c3bf971ae67169b535e68096a4531e4 DependenciesID=383e7febcea8484d27633ee9d7515084 StaticDependenciesID=0bad9f80dcc946993427288a4127eaaa 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.3218622Z
+  Time since last request: 0.0004235 seconds.
+  importAddress: GUID: 3c3dfafde5ef35d408cceb489629f2c3 - Path: Assets/images/Kenji_Japao.png - Importer: PreviewImporter
+Importing 'GUID: 3c3dfafde5ef35d408cceb489629f2c3 - Path: Assets/images/Kenji_Japao.png - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 3c3dfafde5ef35d408cceb489629f2c3' -> (Import Result ID: '78f2c3f9d3832ee26572ec90dba4ec97') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dde32aa7e07f9dfebfc847f4f616978b DependenciesID=640965277a9d2fbd8589a5a8f29a979d StaticDependenciesID=f9cc6457b2bc0094914239d70a83202c 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.3359033Z
+  Time since last request: 0.0005616 seconds.
+  importAddress: GUID: 44e7beae8aa87ef449b3922a3bb03d2e - Path: Assets/images/jogo_2.jpeg - Importer: PreviewImporter
+Importing 'GUID: 44e7beae8aa87ef449b3922a3bb03d2e - Path: Assets/images/jogo_2.jpeg - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 44e7beae8aa87ef449b3922a3bb03d2e' -> (Import Result ID: '78ce337f44a3c9e23bb4949799d1cc45') in 0.014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cbf652e035792754490fb534f92eec18 DependenciesID=791bef8bc8a96c91a28aec5378894fd3 StaticDependenciesID=a7631f763dee3bcc30b28fa998a2559f 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.351016Z
+  Time since last request: 0.0004389 seconds.
+  importAddress: GUID: 4f7aec96c131abc4688cc13a05c49e7d - Path: Assets/images/jogo_3.jpeg - Importer: PreviewImporter
+Importing 'GUID: 4f7aec96c131abc4688cc13a05c49e7d - Path: Assets/images/jogo_3.jpeg - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 4f7aec96c131abc4688cc13a05c49e7d' -> (Import Result ID: '03c5eb3c02bae29d1da964a526d76d08') in 0.013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6f2d9a563bea9737088b9693d15a138f DependenciesID=d5c0ee610ce8f453d3d9eaa88b098c0a StaticDependenciesID=5fec3e850efef84e7e58ec9005fbbc2f 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.3648269Z
+  Time since last request: 0.0004456 seconds.
+  importAddress: GUID: 2b7e81be0cc71b047bd9546bf942b2e6 - Path: Assets/images/Ferrari.png - Importer: PreviewImporter
+Importing 'GUID: 2b7e81be0cc71b047bd9546bf942b2e6 - Path: Assets/images/Ferrari.png - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 2b7e81be0cc71b047bd9546bf942b2e6' -> (Import Result ID: 'bacbe4ec951ce96a29c8fdc196f9eb21') in 0.009 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5c6257d6239fdc92906af0751df71f2 DependenciesID=3a0aaabe1497f3e31d21e6c5d053de2c StaticDependenciesID=80eddd9e7ab8354a61c69fea2c710ebb 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.3752708Z
+  Time since last request: 0.0002935 seconds.
+  importAddress: GUID: b01d73c681fbe8e4495f2df3977f8f88 - Path: Assets/images/jogo_5.png - Importer: PreviewImporter
+Importing 'GUID: b01d73c681fbe8e4495f2df3977f8f88 - Path: Assets/images/jogo_5.png - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: b01d73c681fbe8e4495f2df3977f8f88' -> (Import Result ID: '8044282840c199163d33428e48697b73') in 0.009 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=144c567201101c53021333ee9b2b2c30 DependenciesID=9be794ea5e865f70e5ac179674665316 StaticDependenciesID=bcabaca3babf07d2ce30ec30f7016bfe 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time of request: 2026-11-13T10:59:14.3851617Z
+  Time since last request: 0.0003687 seconds.
+  importAddress: GUID: 8a06dcfaacdaec34e93f13de7eebdd22 - Path: Assets/images/Katana.png - Importer: PreviewImporter
+Importing 'GUID: 8a06dcfaacdaec34e93f13de7eebdd22 - Path: Assets/images/Katana.png - Importer: PreviewImporter' with importer (PreviewImporter)
+Imported 'GUID: 8a06dcfaacdaec34e93f13de7eebdd22' -> (Import Result ID: '3dc6a998179540807170a7cf1ef59d74') in 0.012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8498d8cf6e5de5080437d88ae491242f DependenciesID=fac4885cc10ec754b10b07d1b243825e StaticDependenciesID=93e8d13f76e13b906c8e873f45276ebc 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 22.34 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.902 seconds
+Domain Reload Profiling: 1806ms
+	BeginReloadAssembly (320ms)
+		DisableScriptedObjects (18ms)
+		CreateAndSetChildDomain (61ms)
+	RebuildCommonClasses (10ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (475ms)
+		LoadAssemblies (380ms)
+		AnalyzeDomain (120ms)
+			TypeCache.Refresh (56ms)
+				TypeCache.ScanAssembly (47ms)
+			BuildScriptInfoCaches (59ms)
+	FinalizeReload (904ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (146ms)
+			ProcessInitializeOnLoadAttributes (234ms)
+			ProcessInitializeOnLoadMethodAttributes (273ms)
+			AfterProcessingInitializeOnLoad (15ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 23.83 ms, found 0 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2519 unused Assets / (0.6 MB). Loaded Objects now: 3059.
+Memory consumption went from 197.9 MB to 197.3 MB.
+Total: 10.740300 ms (FindLiveObjects: 0.316800 ms CreateObjectMapping: 1.102400 ms MarkObjects: 8.428500 ms  DeleteObjects: 0.891300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Refreshing native plugins compatible for Editor in 25.27 ms, found 1 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.883 seconds
+Domain Reload Profiling: 1983ms
+	BeginReloadAssembly (296ms)
+		DisableScriptedObjects (16ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (90ms)
+	LoadAllAssembliesAndSetupDomain (671ms)
+		LoadAssemblies (510ms)
+		AnalyzeDomain (158ms)
+			TypeCache.Refresh (87ms)
+				TypeCache.ScanAssembly (76ms)
+			BuildScriptInfoCaches (67ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (884ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (162ms)
+			ProcessInitializeOnLoadAttributes (161ms)
+			ProcessInitializeOnLoadMethodAttributes (260ms)
+			AfterProcessingInitializeOnLoad (13ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 21.30 ms, found 1 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2988 unused Assets / (1.4 MB). Loaded Objects now: 3528.
+Memory consumption went from 203.9 MB to 202.5 MB.
+Total: 9.965600 ms (FindLiveObjects: 0.451400 ms CreateObjectMapping: 1.582800 ms MarkObjects: 6.024500 ms  DeleteObjects: 1.905600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+AcceleratorClientConnectionCallback - disconnected - :0
+Refreshing native plugins compatible for Editor in 51.07 ms, found 1 plugins.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (38.0 KB). Loaded Objects now: 3528.
+Memory consumption went from 202.4 MB to 202.4 MB.
+Total: 13.417300 ms (FindLiveObjects: 0.243600 ms CreateObjectMapping: 0.942200 ms MarkObjects: 12.072400 ms  DeleteObjects: 0.157200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+Editor requested this worker to shutdown with reason: Editor is closing down
+AcceleratorClientConnectionCallback - disconnected - :0
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

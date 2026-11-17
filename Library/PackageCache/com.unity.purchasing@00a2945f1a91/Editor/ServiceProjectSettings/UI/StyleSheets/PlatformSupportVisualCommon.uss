@@ -1,0 +1,47 @@
+.editor-setup {
+    padding: 4px 8px 0 8px;
+}
+
+.editor-setup-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.editor-setup-title {
+    -unity-font-style: bold;
+    font-size: 12px;
+    padding: 0;
+    margin: 0 6px 0 0;
+}
+
+.editor-setup-button {
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.editor-setup-row {
+    flex-direction: row;
+    align-items: center;
+    min-height: 18px;
+}
+
+.editor-setup-label {
+    width: 160px;
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.editor-setup-value {
+    flex-shrink: 1;
+    white-space: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.editor-setup-dropdown {
+    flex-grow: 1;
+    margin: 0;
+}
