@@ -1,16 +1,13 @@
-
 {
   "app": {
     "titulo": "Mobile TCC"
   },
   "home": {
     "fotos": [
-      "assets/images/jogo_1.jpeg",
-      "assets/images/jogo_2.jpeg",
-      "assets/images/jogo_3.jpeg",
-      "assets/images/jogo_4.jpeg",
-      "assets/images/jogo_5.png",
-      "assets/images/jogo_6.png"
+      "assets/images/fase_egito.png",
+      "assets/images/fase_brasil.png",
+      "assets/images/fase_italia.png",
+      "assets/images/fase_japao.png"
     ],
     "tituloDescubra": "DESCUBRA MAIS:",
     "botoes": [
@@ -75,7 +72,7 @@
     "secoes": [
       {
         "titulo": "JAPÃO",
-        "imagem": "assets/images/jogo_secao.png",
+        "imagem": "assets/images/fase_japao.png",
         "motivoEscolha": "O Japão foi escolhido para representar uma das fases do nosso jogo por sua rica cultura, arquitetura tradicional e forte ligação com a tecnologia. O país oferece uma combinação única entre tradição e modernidade, proporcionando um cenário cheio de possibilidades para a exploração e a aprendizagem. Além disso, seus templos, paisagens e elementos culturais tornam a experiência mais imersiva, despertando a curiosidade dos jogadores e permitindo que conheçam um pouco mais sobre a cultura japonesa enquanto se divertem.",
         "personagem": "Kenji",
         "motivoPersonagem": "Personagem com um tom de pele mais clara, cabelo liso escuro, e roupas largas, mais de rua, com cores simples e sapato preto.",
@@ -124,11 +121,12 @@
             "descricao": "Informações sobre templos, santuários e locais históricos da cultura japonesa.",
             "url": "https://www.japan.travel/pt/things-to-do/history/temples-and-shrines/"
           }
-        ]
+        ],
+        "proporcaoImagem": 1
       },
       {
         "titulo": "ITÁLIA",
-        "imagem": "assets/images/jogo_secao.png",
+        "imagem": "assets/images/fase_italia.png",
         "motivoEscolha": "A Itália foi escolhida para representar uma das fases do nosso jogo por sua rica história, arquitetura marcante e grande importância cultural. O país é conhecido por seus monumentos históricos, cidades encantadoras e contribuições para a arte, a ciência e a gastronomia. Esses elementos proporcionam um cenário interessante para a exploração e a aprendizagem, permitindo que os jogadores conheçam um pouco mais sobre a cultura italiana enquanto avançam pelos desafios do jogo.",
         "personagem": "Sofia",
         "motivoPersonagem": "Personagem com roupas mais sociais, inspirada em estilo mais retrô, com coloração verde escuro, branco, e sapatos com cor vibrante para dar a ideia de uma pessoa jovial.",
@@ -192,11 +190,12 @@
             "descricao": "Informações sobre a história, a arte e o patrimônio cultural italiano.",
             "url": "https://www.italia.it/en/italy/things-to-do/art-culture"
           }
-        ]
+        ],
+        "proporcaoImagem": 1
       },
       {
         "titulo": "EGITO",
-        "imagem": "assets/images/jogo_secao_3.jpeg",
+        "imagem": "assets/images/fase_egito.png",
         "motivoEscolha": "O Egito foi escolhido para representar uma das fases do nosso jogo por sua história milenar, seus monumentos grandiosos e seus mistérios. O país é conhecido pelas pirâmides, pelos templos, pela cultura dos faraós e pela importância do Rio Nilo para o desenvolvimento de sua civilização. Esses elementos criam um cenário envolvente para a exploração e a aprendizagem, permitindo que os jogadores descubram aspectos da história e da cultura egípcia enquanto enfrentam os desafios do jogo.",
         "personagem": "Amira",
         "motivoPersonagem": "Personagem inspirada com roupas largas, utilizando calças longas, regata branca e acessórios dourados para simbolizar um estilo egípcio",
@@ -249,11 +248,12 @@
             "descricao": "Conteúdo sobre o Antigo Império egípcio, os faraós e o desenvolvimento das pirâmides.",
             "url": "https://egymonuments.gov.eg/en/historical-periods/old-kingdom"
           }
-        ]
+        ],
+        "proporcaoImagem": 1
       },
       {
         "titulo": "BRASIL",
-        "imagem": "assets/images/jogo_secao_4.jpeg",
+        "imagem": "assets/images/fase_brasil.png",
         "motivoEscolha": "O Brasil foi escolhido para representar uma das fases do nosso jogo por sua grande diversidade cultural, riqueza natural e história. O país possui paisagens variadas, como florestas, rios e praias, além de uma cultura marcada por festas populares, música, danças e tradições regionais. Esses elementos proporcionam um cenário colorido e cheio de possibilidades para a exploração e a aprendizagem, permitindo que os jogadores conheçam melhor a diversidade brasileira enquanto se divertem e superam os desafios do jogo.",
         "personagem": "Lucas",
         "motivoPersonagem": "Personagem com cabelo crespo, com roupas tropicais, simbolizando o Brasil, com a camiseta da seleção brasileira de 2026, bermuda azul e chinelos brancos.",
@@ -311,7 +311,8 @@
             "descricao": "Conteúdo sobre a relação entre capoeira, música, berimbau e cultura afro-brasileira.",
             "url": "https://www.gov.br/cultura/pt-br/assuntos/noticias-defeso-eleitoral/roda-de-capoeira-patrimonio-cultural-do-brasil-une-luta-danca-e-musica/"
           }
-        ]
+        ],
+        "proporcaoImagem": 1
       }
     ]
   },
@@ -448,7 +449,7 @@
     "documentos": [
       {
         "titulo": "Documentação Final - Acrossing the World",
-        "descricao": "Documento final do Trabalho de Conclusão de Curso, disponível para leitura no aplicativo.",
+        "descricao": "Documentação final do TCC. No site, clique para baixar o PDF; no aplicativo, clique para visualizar.",
         "tipo": "PDF",
         "arquivo": "assets/documentation/Acrossing_the_World_Documentacao.pdf"
       }

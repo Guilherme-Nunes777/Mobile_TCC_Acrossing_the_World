@@ -40,7 +40,7 @@ class _CardIntegranteState extends State<CardIntegrante>
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -109,7 +109,7 @@ class _CardIntegranteState extends State<CardIntegrante>
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.azul.withOpacity(0.08),
+                    color: AppColors.azul.withValues(alpha: 0.08),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -171,7 +171,7 @@ class _CardIntegranteState extends State<CardIntegrante>
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.white.withOpacity(0),
+                          Colors.white.withValues(alpha: 0),
                           Colors.white,
                         ],
                       ),
@@ -202,7 +202,7 @@ class _CardIntegranteState extends State<CardIntegrante>
             });
           },
           style: IconButton.styleFrom(
-            backgroundColor: AppColors.azul.withOpacity(0.08),
+            backgroundColor: AppColors.azul.withValues(alpha: 0.08),
             foregroundColor: AppColors.azul,
             fixedSize: const Size(44, 44),
           ),

@@ -111,7 +111,7 @@ class _CardFase extends StatelessWidget {
       case 'ITÁLIA':
         return const Color(0xFFB85B42);
       case 'JAPÃO':
-        return const Color(0xFFB34553);
+        return const Color.fromARGB(255, 255, 0, 34);
       default:
         return JogoPage.azul;
     }
@@ -305,8 +305,7 @@ class _CardFase extends StatelessWidget {
           content: ConstrainedBox(
             constraints: BoxConstraints(
               maxWidth: 560,
-              maxHeight:
-                  MediaQuery.of(dialogContext).size.height * 0.56,
+              maxHeight: MediaQuery.of(dialogContext).size.height * 0.56,
             ),
             child: SingleChildScrollView(
               child: Column(
@@ -335,8 +334,7 @@ class _CardFase extends StatelessWidget {
                         const SizedBox(width: 12),
                         Expanded(
                           child: Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'RECOMPENSA DA FASE',
@@ -367,8 +365,7 @@ class _CardFase extends StatelessWidget {
           ),
           actions: [
             TextButton.icon(
-              onPressed: () =>
-                  Navigator.of(dialogContext).pop(),
+              onPressed: () => Navigator.of(dialogContext).pop(),
               icon: const Icon(
                 Icons.close_rounded,
                 size: 18,
@@ -412,9 +409,13 @@ class _CardFase extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Imagem(
-            caminho: secao.imagem,
-            proporcao: 16 / 9,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(14, 14, 14, 0),
+            child: _Imagem(
+              caminho: secao.imagem,
+              proporcao: secao.proporcaoImagem,
+              destaque: true,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(18),
@@ -588,10 +589,12 @@ class _Texto extends StatelessWidget {
 class _Imagem extends StatelessWidget {
   final String? caminho;
   final double proporcao;
+  final bool destaque;
 
   const _Imagem({
     required this.caminho,
     required this.proporcao,
+    this.destaque = false,
   });
 
   @override
@@ -600,18 +603,43 @@ class _Imagem extends StatelessWidget {
       return const SizedBox.shrink();
     }
 
-    return SizedBox(
-      width: double.infinity,
-      height: 350,
-      child: Image.asset(
-        caminho!,
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.contain,
-        alignment: Alignment.center,
-        errorBuilder: (context, error, stackTrace) {
-          return const SizedBox.shrink();
-        },
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: destaque ? 620 : 420),
+        child: Container(
+          decoration: BoxDecoration(
+            color: const Color(0xFFF0F3F8),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: const Color(0xFFE0E6EF),
+              width: 1,
+            ),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: AspectRatio(
+            aspectRatio: proporcao > 0 ? proporcao : 1,
+            child: Padding(
+              padding: EdgeInsets.all(destaque ? 0 : 14),
+              child: Image.asset(
+                caminho!,
+                fit: destaque ? BoxFit.cover : BoxFit.contain,
+                alignment: Alignment.center,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.broken_image_outlined, size: 40),
+                        SizedBox(height: 8),
+                        Text('Imagem indisponível'),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

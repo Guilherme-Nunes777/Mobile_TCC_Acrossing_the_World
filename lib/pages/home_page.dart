@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../models/conteudo.dart';
 import '../widgets/botao_hexagono.dart';
@@ -121,53 +120,64 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(imagens.length, (i) {
-                  return Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 6),
-                    width: 12,
-                    height: 12,
+                  final selecionada = i == _paginaAtual;
+                  return AnimatedContainer(
+                    duration: const Duration(milliseconds: 240),
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    width: selecionada ? 23 : 7,
+                    height: 7,
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: i == _paginaAtual
-                          ? Colors.black
-                          : Colors.black26,
+                      borderRadius: BorderRadius.circular(20),
+                      color: selecionada
+                          ? AppColors.azul
+                          : const Color(0xFFB9C5D8),
                     ),
                   );
                 }),
               ),
-
               const SizedBox(height: 16),
-
-              AspectRatio(
-                aspectRatio: 571 / 377,
-                child: PageView.builder(
-                  controller: _controller,
-                  itemCount: imagens.length,
-                  onPageChanged: (i) {
-                    setState(() {
-                      _paginaAtual = i;
-                    });
-                  },
-                  itemBuilder: (_, i) {
-                    return ImagemAsset(
-                      imagens[i],
-                      fallback: Container(
-                        color: AppColors.cinza,
-                        alignment: Alignment.center,
-                        child: const Text(
-                          'FOTOS DO JOGO',
-                          style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w400,
-                          ),
+              Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 560),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.13),
+                          blurRadius: 22,
+                          offset: const Offset(0, 9),
                         ),
+                      ],
+                    ),
+                    clipBehavior: Clip.antiAlias,
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: PageView.builder(
+                        controller: _controller,
+                        itemCount: imagens.length,
+                        onPageChanged: (i) => setState(() => _paginaAtual = i),
+                        itemBuilder: (_, i) {
+                          // Imagens quadradas 1:1: exibir a foto inteira.
+                          return ImagemAsset(
+                            imagens[i],
+                            fit: BoxFit.contain,
+                            fallback: Container(
+                              color: const Color(0xFFF2F4F7),
+                              alignment: Alignment.center,
+                              child: const Icon(
+                                Icons.image_not_supported_outlined,
+                                size: 36,
+                              ),
+                            ),
+                          );
+                        },
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
-
               const SizedBox(height: 16),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -175,15 +185,29 @@ class _HomePageState extends State<HomePage> {
                     icone: Icons.arrow_back,
                     onTap: () => _ir(-1),
                   ),
+                  Expanded(
+                    child: Text(
+                      const [
+                        'EGITO',
+                        'BRASIL',
+                        'ITÁLIA',
+                        'JAPÃO'
+                      ][_paginaAtual],
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                  ),
                   BotaoSeta(
                     icone: Icons.arrow_forward,
                     onTap: () => _ir(1),
                   ),
                 ],
               ),
-
               const SizedBox(height: 24),
-
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -194,9 +218,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 24),
-
               ..._linhasDeBotoes(),
             ],
           ),
