@@ -39,10 +39,6 @@
   "empresa": {
     "titulo": "EMPRESA",
     "imagemHeader": "assets/images/header_empresa.png",
-    "linkOficial": {
-      "titulo": "Site oficial da empresa",
-      "url": ""
-    },
     "secoes": [
       {
         "titulo": "QUEM SOMOS",
@@ -73,7 +69,6 @@
       }
     ]
   },
-
   "jogo": {
     "titulo": "JOGO",
     "imagemHeader": "assets/images/header_jogo.jpeg",
@@ -90,12 +85,37 @@
         "imagemObjeto": "assets/images/Katana.png",
         "mecanicas": [
           {
-            "titulo": "Exploração do cenário",
-            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+            "titulo": "Explore o santuário",
+            "descricao": "Controle Kenji pelo cenário externo, observe a arquitetura japonesa e siga os objetivos indicados na tela até encontrar o guia.",
+            "icone": "explorar"
           },
           {
-            "titulo": "Desafio principal",
-            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+            "titulo": "Converse com o guia turístico",
+            "descricao": "Aproxime-se do guia e use E ou Enter para iniciar e avançar o diálogo. Ele apresenta períodos da história do Japão, templos, santuários e a tradição dos samurais.",
+            "icone": "dialogo",
+            "destaque": "Conversa obrigatória antes de entrar"
+          },
+          {
+            "titulo": "Entre no templo",
+            "descricao": "Depois de concluir o diálogo com o guia, aproxime-se da porta e pressione E ou Enter para passar do cenário externo ao interior do templo.",
+            "icone": "porta"
+          },
+          {
+            "titulo": "Descubra a história dos Okoizume",
+            "descricao": "Dentro do templo, procure o monge. Durante a conversa, Kenji conhece a lenda de seu clã samurai, os Okoizume, e entende por que uma katana cerimonial foi preservada para ele.",
+            "icone": "historia"
+          },
+          {
+            "titulo": "Receba a katana",
+            "descricao": "Ao terminar a conversa com o monge, Kenji recebe a Katana Cerimonial Okoizume. Uma tela apresenta a conquista, e o objeto 3D passa a aparecer girando no canto superior da interface.",
+            "icone": "premio",
+            "destaque": "Recompensa: Katana Cerimonial Okoizume"
+          },
+          {
+            "titulo": "Conclua a despedida e volte",
+            "descricao": "Fale novamente com o monge depois de conquistar a katana. Só após ouvir a mensagem sobre o legado da família e o respeito às tradições a saída do templo é liberada.",
+            "icone": "saida",
+            "destaque": "A conversa final libera a saída"
           }
         ],
         "referencias": [
@@ -118,12 +138,47 @@
         "imagemObjeto": "assets/images/Ferrari.png",
         "mecanicas": [
           {
-            "titulo": "Exploração do cenário",
-            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+            "titulo": "Conheça a cidade com Sofia",
+            "descricao": "Explore a rua e a ponte, encontre o guia turístico e converse sobre a história, a arquitetura e as tradições culturais da Itália.",
+            "icone": "explorar"
           },
           {
-            "titulo": "Desafio principal",
-            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+            "titulo": "Entre na pizzaria e fale com Marco",
+            "descricao": "Depois da conversa com o guia, localize a porta do prédio com dois assentos ao lado. Entre no restaurante e ouça as instruções do chef Marco.",
+            "icone": "porta"
+          },
+          {
+            "titulo": "Atenda dois pedidos no tempo",
+            "descricao": "Prepare uma pizza Margherita e depois uma de calabresa. O desafio começa com uma contagem regressiva; você tem dois minutos para concluir os dois pedidos, incluindo forno, embalagem e cortes.",
+            "icone": "tempo",
+            "destaque": "2 minutos para as duas pizzas"
+          },
+          {
+            "titulo": "Monte as pizzas com o mouse",
+            "descricao": "Coloque a massa e arraste os ingredientes. Dosagem: 80% a 90% de molho e 50% a 60% de queijo. A Margherita recebe 3 folhas de manjericão; a segunda pizza leva 4 rodelas de calabresa e 3 anéis de cebola.",
+            "icone": "pizza"
+          },
+          {
+            "titulo": "Acerte o ponto do forno",
+            "descricao": "Depois de montar a pizza, leve-a ao forno. Observe o indicador de cozimento e retire a pizza quando o marcador alcançar a faixa verde para não perder pontos.",
+            "icone": "forno"
+          },
+          {
+            "titulo": "Embale e corte corretamente",
+            "descricao": "Arraste a pizza assada para dentro da caixa. Em seguida, faça os cortes arrastando o mouse entre as marcas: 6 fatias para a Margherita e 8 para a calabresa.",
+            "icone": "corte",
+            "destaque": "Margherita: 6 | Calabresa: 8 fatias"
+          },
+          {
+            "titulo": "Passe na avaliação do chef",
+            "descricao": "Marco avalia montagem, quantidades, coberturas e forno. É necessário obter pelo menos 7/10 em cada pedido. Se o tempo acabar ou alguma pizza for reprovada, o serviço recomeça.",
+            "icone": "avaliacao",
+            "destaque": "Nota mínima: 7/10 em cada pizza"
+          },
+          {
+            "titulo": "Conquiste a Ferrari F40",
+            "descricao": "Com os dois pedidos aprovados, Sofia recebe a miniatura da Ferrari F40. Depois da conquista, converse novamente com Marco para finalizar a visita e liberar a saída da pizzaria.",
+            "icone": "premio"
           }
         ],
         "referencias": [
@@ -151,12 +206,36 @@
         "imagemObjeto": "assets/images/Escaravelho.png",
         "mecanicas": [
           {
-            "titulo": "Exploração do cenário",
-            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+            "titulo": "Explore os arredores da pirâmide",
+            "descricao": "Controle Amira pelo cenário egípcio e acompanhe o objetivo exibido na tela para localizar os pontos de interação e descobrir mais sobre o local.",
+            "icone": "explorar"
           },
           {
-            "titulo": "Desafio principal",
-            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+            "titulo": "Converse com o guia turístico",
+            "descricao": "Aproxime-se do guia e pressione E ou Enter para iniciar e avançar a conversa. O diálogo apresenta a história do Egito e precisa ser concluído antes da entrada na pirâmide.",
+            "icone": "dialogo",
+            "destaque": "O guia libera a entrada"
+          },
+          {
+            "titulo": "Entre na pirâmide",
+            "descricao": "Vá até a porta da pirâmide depois de falar com o guia. Ao aparecer o aviso, use E ou Enter para acessar o cenário interno.",
+            "icone": "porta"
+          },
+          {
+            "titulo": "Encontre Rami, a múmia",
+            "descricao": "Explore o interior, suba a escadaria e converse com Rami. Ouça as histórias sobre a civilização egípcia e o significado da relíquia que ele protege.",
+            "icone": "historia"
+          },
+          {
+            "titulo": "Conquiste o escaravelho",
+            "descricao": "Ao terminar o diálogo com Rami, Amira recebe o escaravelho egípcio. A animação de entrega e a tela de conquista marcam a conclusão do desafio.",
+            "icone": "premio",
+            "destaque": "Recompensa: Escaravelho egípcio"
+          },
+          {
+            "titulo": "Retorne ao exterior",
+            "descricao": "Depois da conquista, use o ponto de saída da pirâmide para voltar ao cenário externo e continuar a exploração.",
+            "icone": "saida"
           }
         ],
         "referencias": [
@@ -184,12 +263,41 @@
         "imagemObjeto": "assets/images/Berimbau.png",
         "mecanicas": [
           {
-            "titulo": "Exploração do cenário",
-            "descricao": "O jogador precisa explorar o ambiente para encontrar pistas e avançar na fase."
+            "titulo": "Explore a praia com Lucas",
+            "descricao": "Caminhe pelo cenário do Rio de Janeiro e siga os objetivos da tela para encontrar os personagens que apresentam o desafio.",
+            "icone": "explorar"
           },
           {
-            "titulo": "Desafio principal",
-            "descricao": "O jogador deverá resolver um desafio para conseguir avançar."
+            "titulo": "Converse com o guia",
+            "descricao": "Encontre o agente da Horizon Travel e avance o diálogo com E ou Enter. Ele apresenta o ambiente e orienta Lucas até o próximo personagem.",
+            "icone": "dialogo"
+          },
+          {
+            "titulo": "Conheça o morador e o berimbau",
+            "descricao": "Fale com o morador da praia. Ele conta a história do berimbau de seu avô, ligado às rodas de capoeira, e convida Lucas para um desafio de embaixadinhas.",
+            "icone": "historia"
+          },
+          {
+            "titulo": "Prepare-se para as embaixadinhas",
+            "descricao": "Ao aceitar o desafio, começa uma contagem regressiva de 3 segundos. Observe o indicador na tela para acertar o momento de cada toque.",
+            "icone": "tempo"
+          },
+          {
+            "titulo": "Acerte 10 toques seguidos",
+            "descricao": "Pressione Espaço apenas quando o marcador estiver na faixa verde e solte a tecla entre os toques. A faixa muda de posição e tamanho a cada acerto.",
+            "icone": "desafio",
+            "destaque": "Meta: 10 embaixadinhas consecutivas"
+          },
+          {
+            "titulo": "Errou? Tente novamente",
+            "descricao": "Se apertar fora da faixa, segurar a tecla ou demorar demais, a bola cai e a sequência é interrompida. Recomece o desafio e tente completar os 10 acertos.",
+            "icone": "repetir"
+          },
+          {
+            "titulo": "Receba o berimbau",
+            "descricao": "Ao completar a sequência, Lucas conquista o berimbau antigo, recebe a tela de recompensa e pode continuar explorando com o objeto registrado.",
+            "icone": "premio",
+            "destaque": "Recompensa: Berimbau antigo"
           }
         ],
         "referencias": [
@@ -237,7 +345,6 @@
       }
     ]
   },
-
   "creditos": {
     "titulo": "CRÉDITOS",
     "imagemHeader": "assets/images/header_creditos.jpeg",
@@ -338,6 +445,13 @@
         "url": "https://cursowp.cursoemvideo.com/manual/"
       }
     ],
-    "documentos": []
+    "documentos": [
+      {
+        "titulo": "Documentação Final - Acrossing the World",
+        "descricao": "Documentação final do TCC. No site, clique para baixar o PDF; no aplicativo, clique para visualizar.",
+        "tipo": "PDF",
+        "arquivo": "assets/documentation/Acrossing_the_World_Documentacao.pdf"
+      }
+    ]
   }
 }

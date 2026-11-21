@@ -102,103 +102,285 @@ class _CardFase extends StatelessWidget {
     required this.numero,
   });
 
+  Color get _corDaFase {
+    switch (secao.titulo.trim().toUpperCase()) {
+      case 'EGITO':
+        return const Color(0xFFA77C27);
+      case 'BRASIL':
+        return const Color(0xFF21855B);
+      case 'ITÁLIA':
+        return const Color(0xFFB85B42);
+      case 'JAPÃO':
+        return const Color(0xFFB34553);
+      default:
+        return JogoPage.azul;
+    }
+  }
+
+  IconData _iconeDaMecanica(String tipo) {
+    switch (tipo) {
+      case 'explorar':
+        return Icons.explore_outlined;
+      case 'dialogo':
+        return Icons.chat_bubble_outline;
+      case 'porta':
+        return Icons.door_front_door_outlined;
+      case 'historia':
+        return Icons.auto_stories_outlined;
+      case 'premio':
+        return Icons.workspace_premium_outlined;
+      case 'saida':
+        return Icons.exit_to_app_outlined;
+      case 'tempo':
+        return Icons.timer_outlined;
+      case 'pizza':
+        return Icons.local_pizza_outlined;
+      case 'forno':
+        return Icons.local_fire_department_outlined;
+      case 'corte':
+        return Icons.content_cut_outlined;
+      case 'avaliacao':
+        return Icons.star_half_rounded;
+      case 'desafio':
+        return Icons.sports_soccer_outlined;
+      case 'repetir':
+        return Icons.replay_outlined;
+      default:
+        return Icons.check_circle_outline;
+    }
+  }
+
+  Widget _cartaoMecanica(
+    Map<String, dynamic> mecanica,
+    int indice,
+    Color cor,
+  ) {
+    final titulo = (mecanica['titulo'] ?? '').toString().trim();
+    final descricao = (mecanica['descricao'] ?? '').toString().trim();
+    final destaque = (mecanica['destaque'] ?? '').toString().trim();
+    final icone = (mecanica['icone'] ?? '').toString().trim();
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: const Color(0xFFE2E6ED)),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 42,
+            height: 42,
+            decoration: BoxDecoration(
+              color: cor.withAlpha(26),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(_iconeDaMecanica(icone), color: cor, size: 23),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (titulo.isNotEmpty)
+                  Text(
+                    '${indice + 1}. $titulo',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 15,
+                      height: 1.3,
+                      color: JogoPage.textoEscuro,
+                    ),
+                  ),
+                if (titulo.isNotEmpty && descricao.isNotEmpty)
+                  const SizedBox(height: 7),
+                if (descricao.isNotEmpty)
+                  Text(
+                    descricao,
+                    style: const TextStyle(
+                      fontSize: 13.5,
+                      height: 1.5,
+                      color: JogoPage.textoClaro,
+                    ),
+                  ),
+                if (destaque.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: cor.withAlpha(18),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      destaque,
+                      style: TextStyle(
+                        color: cor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   void _abrirMecanicas(BuildContext context) {
-    showDialog(
+    final mecanicas = secao.mecanicas.where((mecanica) {
+      final titulo = (mecanica['titulo'] ?? '').toString().trim();
+      final descricao = (mecanica['descricao'] ?? '').toString().trim();
+      return titulo.isNotEmpty || descricao.isNotEmpty;
+    }).toList();
+    final cor = _corDaFase;
+
+    showDialog<void>(
       context: context,
-      builder: (context) {
+      builder: (dialogContext) {
         return AlertDialog(
-          backgroundColor: Colors.white,
+          backgroundColor: JogoPage.fundo,
+          surfaceTintColor: Colors.transparent,
+          insetPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 20,
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          titlePadding: const EdgeInsets.fromLTRB(22, 24, 22, 12),
-          contentPadding: const EdgeInsets.fromLTRB(22, 8, 22, 12),
+          titlePadding: const EdgeInsets.fromLTRB(20, 20, 20, 6),
+          contentPadding: const EdgeInsets.fromLTRB(16, 10, 16, 8),
           actionsPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-          title: Row(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                Icons.sports_esports_outlined,
-                color: JogoPage.azul,
-                size: 25,
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  'MECÂNICAS — ${secao.titulo}',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: JogoPage.textoEscuro,
+              Row(
+                children: [
+                  Icon(
+                    Icons.sports_esports_outlined,
+                    color: cor,
+                    size: 26,
                   ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'MECÂNICAS — ${secao.titulo}',
+                      style: const TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: JogoPage.textoEscuro,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 9),
+              const Text(
+                'Conheça a aventura passo a passo e descubra como conquistar a recompensa da fase.',
+                style: TextStyle(
+                  fontSize: 13,
+                  height: 1.4,
+                  color: JogoPage.textoClaro,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                '${mecanicas.length} etapas da fase',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700,
+                  color: cor,
                 ),
               ),
             ],
           ),
-          content: SizedBox(
-            width: double.maxFinite,
+          content: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 560,
+              maxHeight:
+                  MediaQuery.of(dialogContext).size.height * 0.56,
+            ),
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
-                children: secao.mecanicas
-                    .where((mecanica) {
-                      final titulo =
-                          mecanica['titulo']?.toString() ?? '';
-                      final descricao =
-                          mecanica['descricao']?.toString() ?? '';
-
-                      return titulo.trim().isNotEmpty ||
-                          descricao.trim().isNotEmpty;
-                    })
-                    .map((mecanica) {
-                      final titulo =
-                          mecanica['titulo']?.toString() ?? '';
-                      final descricao =
-                          mecanica['descricao']?.toString() ?? '';
-
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (titulo.trim().isNotEmpty)
-                              Text(
-                                titulo,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: JogoPage.azul,
-                                ),
-                              ),
-                            if (titulo.trim().isNotEmpty &&
-                                descricao.trim().isNotEmpty)
-                              const SizedBox(height: 7),
-                            if (descricao.trim().isNotEmpty)
-                              Text(
-                                descricao,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  height: 1.7,
-                                  color: JogoPage.textoClaro,
-                                ),
-                              ),
-                          ],
+                children: [
+                  for (int i = 0; i < mecanicas.length; i++)
+                    _cartaoMecanica(
+                      mecanicas[i],
+                      i,
+                      cor,
+                    ),
+                  Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: cor.withAlpha(22),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.emoji_events_outlined,
+                          color: cor,
+                          size: 28,
                         ),
-                      );
-                    })
-                    .toList(),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment:
+                                CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'RECOMPENSA DA FASE',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: cor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                secao.objeto,
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: JogoPage.textoEscuro,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
           actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text(
+            TextButton.icon(
+              onPressed: () =>
+                  Navigator.of(dialogContext).pop(),
+              icon: const Icon(
+                Icons.close_rounded,
+                size: 18,
+              ),
+              label: const Text(
                 'FECHAR',
                 style: TextStyle(
-                  color: JogoPage.azul,
                   fontWeight: FontWeight.bold,
                 ),
+              ),
+              style: TextButton.styleFrom(
+                foregroundColor: cor,
               ),
             ),
           ],
@@ -220,7 +402,7 @@ class _CardFase extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -315,7 +497,9 @@ class _CardFase extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton.icon(
                     onPressed: () => _abrirMecanicas(context),
-                    icon: const Icon(Icons.menu_book_outlined),
+                    icon: const Icon(
+                      Icons.menu_book_outlined,
+                    ),
                     label: const Text(
                       'CONHECER AS MECÂNICAS',
                       style: TextStyle(

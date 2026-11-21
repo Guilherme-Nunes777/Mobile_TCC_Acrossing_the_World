@@ -1,8 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../services/pdf_download_stub.dart'
+    if (dart.library.html) '../services/pdf_download_web.dart' as pdf_download;
 
 import '../models/conteudo.dart';
 import '../widgets/header_imagem.dart';
+import 'documento_pdf_page.dart';
 
 class CreditosPage extends StatelessWidget {
   final PaginaSimples dados;
@@ -12,17 +16,19 @@ class CreditosPage extends StatelessWidget {
     required this.dados,
   });
 
-  Future<void> _abrirLink(BuildContext context, String url) async {
-    final uri = Uri.tryParse(url);
+  static const cor = Color(0xFF5368CE);
+  static const texto = Color(0xFF202B46);
+  static const secundario = Color(0xFF64708D);
+
+  Future<void> _abrirUrl(
+    BuildContext context,
+    String endereco,
+  ) async {
+    final uri = Uri.tryParse(endereco.trim());
 
     if (uri == null ||
-        !uri.hasScheme ||
-        !(uri.scheme == 'https' || uri.scheme == 'http')) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Link inválido ou não configurado.'),
-        ),
-      );
+        (uri.scheme != 'http' && uri.scheme != 'https') ||
+        uri.host.isEmpty) {
       return;
     }
 
@@ -35,7 +41,9 @@ class CreditosPage extends StatelessWidget {
       if (!abriu && context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Não foi possível abrir o endereço.'),
+            content: Text(
+              'Não foi possível abrir o endereço.',
+            ),
           ),
         );
       }
@@ -43,22 +51,63 @@ class CreditosPage extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Ocorreu um erro ao abrir o endereço.'),
+            content: Text(
+              'Não foi possível abrir o endereço.',
+            ),
           ),
         );
       }
     }
   }
 
+  bool _documentoDisponivel(Map<String, dynamic> documento) {
+    final arquivo = (documento['arquivo'] ?? '').toString().trim();
+    final url = (documento['url'] ?? '').toString().trim();
+    return (arquivo.startsWith('assets/documentation/') &&
+            arquivo.toLowerCase().endsWith('.pdf')) ||
+        (Uri.tryParse(url)?.hasAbsolutePath == true &&
+            (url.startsWith('https://') || url.startsWith('http://')));
+  }
+
+  Future<void> _abrirDocumento(
+    BuildContext context,
+    Map<String, dynamic> documento,
+  ) async {
+    final arquivo = (documento['arquivo'] ?? '').toString().trim();
+    if (arquivo.startsWith('assets/documentation/') &&
+        arquivo.toLowerCase().endsWith('.pdf')) {
+      if (kIsWeb) {
+        try {
+          pdf_download.baixarPdfWeb(arquivo, arquivo.split('/').last);
+        } catch (_) {
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Não foi possível baixar o PDF.')),
+            );
+          }
+        }
+        return;
+      }
+      await Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => DocumentoPdfPage(
+            caminho: arquivo,
+            titulo:
+                (documento['titulo'] ?? 'Documento final do TCC').toString(),
+          ),
+        ),
+      );
+      return;
+    }
+    await _abrirUrl(context, (documento['url'] ?? '').toString());
+  }
+
   @override
   Widget build(BuildContext context) {
-    final professores = dados.professores;
-
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6FB),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.only(bottom: 32),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -67,78 +116,90 @@ class CreditosPage extends StatelessWidget {
                 imagem: dados.imagemHeader,
               ),
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.fromLTRB(
+                  20,
+                  20,
+                  20,
+                  32,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _tituloSecao(
+                    const _Titulo(
                       Icons.school_rounded,
                       'Professores orientadores',
                     ),
                     const SizedBox(height: 16),
-                    _gradePessoas(professores),
+                    _professores(),
                     if (dados.referencias.isNotEmpty) ...[
                       const SizedBox(height: 30),
-                      _tituloSecao(
+                      const _Titulo(
                         Icons.menu_book_rounded,
                         'Referências',
                       ),
                       const SizedBox(height: 8),
                       const Text(
-                        'Fontes utilizadas como base para o desenvolvimento do projeto.',
+                        'Fontes utilizadas no desenvolvimento do projeto.',
                         style: TextStyle(
-                          color: Color(0xFF64708D),
+                          color: secundario,
                           fontSize: 13,
-                          height: 1.5,
                         ),
                       ),
                       const SizedBox(height: 16),
                       for (final referencia in dados.referencias)
-                        _CardRecurso(
-                          titulo:
-                              referencia['titulo']?.toString() ?? '',
-                          descricao:
-                              referencia['descricao']?.toString() ?? '',
-                          url: referencia['url']?.toString() ?? '',
+                        _Recurso(
+                          titulo: (referencia['titulo'] ?? '').toString(),
+                          descricao: (referencia['descricao'] ?? '').toString(),
                           tipo: 'Referência',
                           icone: Icons.link_rounded,
-                          onTap: () => _abrirLink(
+                          ativo:
+                              (referencia['url'] ?? '').toString().isNotEmpty,
+                          onTap: () => _abrirUrl(
                             context,
-                            referencia['url']?.toString() ?? '',
+                            (referencia['url'] ?? '').toString(),
                           ),
                         ),
                     ],
-                    if (dados.documentos.isNotEmpty) ...[
-                      const SizedBox(height: 20),
-                      _tituloSecao(
-                        Icons.folder_open_rounded,
-                        'Documentos e materiais',
+                    const SizedBox(height: 26),
+                    const _Titulo(
+                      Icons.description_rounded,
+                      'Documento final do TCC',
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      kIsWeb
+                          ? 'Baixe a documentação completa em PDF sem abrir o documento no site.'
+                          : 'Consulte a documentação completa do projeto em PDF.',
+                      style: TextStyle(
+                        color: secundario,
+                        fontSize: 13,
+                        height: 1.5,
                       ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        'Acesse materiais complementares e arquivos relacionados ao projeto.',
-                        style: TextStyle(
-                          color: Color(0xFF64708D),
-                          fontSize: 13,
-                          height: 1.5,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
+                    ),
+                    const SizedBox(height: 16),
+                    if (dados.documentos.isEmpty)
+                      const _Recurso(
+                        titulo: 'Documento final do TCC',
+                        descricao:
+                            'Ainda não disponível. O arquivo será adicionado futuramente.',
+                        tipo: 'Em breve',
+                        icone: Icons.description_outlined,
+                        ativo: false,
+                      )
+                    else
                       for (final documento in dados.documentos)
-                        _CardRecurso(
+                        _Recurso(
                           titulo:
-                              documento['titulo']?.toString() ?? '',
-                          descricao:
-                              documento['descricao']?.toString() ?? '',
-                          url: documento['url']?.toString() ?? '',
-                          tipo: documento['tipo']?.toString() ?? 'Arquivo',
-                          icone: Icons.description_outlined,
-                          onTap: () => _abrirLink(
-                            context,
-                            documento['url']?.toString() ?? '',
-                          ),
+                              (documento['titulo'] ?? 'Documento final do TCC')
+                                  .toString(),
+                          descricao: (documento['descricao'] ?? '').toString(),
+                          tipo: (documento['tipo'] ?? 'Documento').toString(),
+                          icone: kIsWeb
+                              ? Icons.download_rounded
+                              : Icons.description_outlined,
+                          ativo: _documentoDisponivel(documento),
+                          onTap: () => _abrirDocumento(context, documento),
                         ),
-                    ],
                     const SizedBox(height: 28),
                     Container(
                       width: double.infinity,
@@ -151,16 +212,15 @@ class CreditosPage extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.favorite_rounded,
-                            color: Color(0xFF5368CE),
+                            color: cor,
                             size: 28,
                           ),
                           SizedBox(height: 8),
                           Text(
-                            'Agradecemos a todos que contribuíram '
-                            'para a realização deste projeto!',
+                            'Agradecemos a todos que contribuíram para a realização deste projeto!',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: Color(0xFF64708D),
+                              color: secundario,
                               height: 1.5,
                             ),
                           ),
@@ -177,18 +237,66 @@ class CreditosPage extends StatelessWidget {
     );
   }
 
-  Widget _tituloSecao(IconData icone, String titulo) {
+  Widget _professores() {
+    if (dados.professores.isEmpty) {
+      return const Text(
+        'Nenhum professor cadastrado.',
+      );
+    }
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final colunas = constraints.maxWidth >= 850
+            ? 3
+            : constraints.maxWidth >= 540
+                ? 2
+                : 1;
+
+        const espaco = 14.0;
+
+        final largura =
+            (constraints.maxWidth - espaco * (colunas - 1)) / colunas;
+
+        return Wrap(
+          spacing: espaco,
+          runSpacing: espaco,
+          children: [
+            for (final professor in dados.professores)
+              SizedBox(
+                width: largura,
+                child: _ProfessorCard(
+                  professor: professor,
+                ),
+              ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _Titulo extends StatelessWidget {
+  final IconData icone;
+  final String titulo;
+
+  const _Titulo(
+    this.icone,
+    this.titulo,
+  );
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       children: [
         Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: const Color(0xFF5368CE).withOpacity(0.10),
+            color: CreditosPage.cor.withValues(alpha: 0.10),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(
             icone,
-            color: const Color(0xFF5368CE),
+            color: CreditosPage.cor,
           ),
         ),
         const SizedBox(width: 12),
@@ -196,7 +304,7 @@ class CreditosPage extends StatelessWidget {
           child: Text(
             titulo,
             style: const TextStyle(
-              color: Color(0xFF202B46),
+              color: CreditosPage.texto,
               fontSize: 19,
               fontWeight: FontWeight.bold,
             ),
@@ -205,97 +313,48 @@ class CreditosPage extends StatelessWidget {
       ],
     );
   }
-
-  Widget _gradePessoas(List<Map<String, dynamic>> pessoas) {
-    if (pessoas.isEmpty) {
-      return const Text(
-        'Nenhum professor cadastrado.',
-        style: TextStyle(color: Color(0xFF64708D)),
-      );
-    }
-
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final largura = constraints.maxWidth;
-        final colunas = largura >= 850
-            ? 3
-            : largura >= 540
-                ? 2
-                : 1;
-
-        const espacamento = 14.0;
-        final larguraCard =
-            (largura - espacamento * (colunas - 1)) / colunas;
-
-        return Wrap(
-          spacing: espacamento,
-          runSpacing: espacamento,
-          children: pessoas.map((pessoa) {
-            return SizedBox(
-              width: larguraCard,
-              child: _PessoaCard(pessoa: pessoa),
-            );
-          }).toList(),
-        );
-      },
-    );
-  }
 }
 
-class _CardRecurso extends StatelessWidget {
+class _Recurso extends StatelessWidget {
   final String titulo;
   final String descricao;
-  final String url;
   final String tipo;
   final IconData icone;
-  final VoidCallback onTap;
+  final bool ativo;
+  final VoidCallback? onTap;
 
-  const _CardRecurso({
+  const _Recurso({
     required this.titulo,
     required this.descricao,
-    required this.url,
     required this.tipo,
     required this.icone,
-    required this.onTap,
+    required this.ativo,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
+    return Card(
+      color: Colors.white,
+      elevation: 0,
       margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(
-          color: const Color(0xFFE6EAF3),
+        side: const BorderSide(
+          color: Color(0xFFE6EAF3),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.025),
-            blurRadius: 10,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
-        onTap: url.isEmpty ? null : onTap,
+        onTap: ativo ? onTap : null,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
             children: [
-              Container(
-                width: 46,
-                height: 46,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF5368CE).withOpacity(0.10),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Icon(
-                  icone,
-                  color: const Color(0xFF5368CE),
-                ),
+              Icon(
+                icone,
+                color: CreditosPage.cor,
+                size: 30,
               ),
               const SizedBox(width: 14),
               Expanded(
@@ -305,16 +364,16 @@ class _CardRecurso extends StatelessWidget {
                     Text(
                       tipo,
                       style: const TextStyle(
-                        color: Color(0xFF5368CE),
+                        color: CreditosPage.cor,
                         fontSize: 11,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      titulo.isEmpty ? 'Material sem título' : titulo,
+                      titulo,
                       style: const TextStyle(
-                        color: Color(0xFF202B46),
+                        color: CreditosPage.texto,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -324,7 +383,7 @@ class _CardRecurso extends StatelessWidget {
                       Text(
                         descricao,
                         style: const TextStyle(
-                          color: Color(0xFF64708D),
+                          color: CreditosPage.secundario,
                           fontSize: 12,
                           height: 1.4,
                         ),
@@ -335,10 +394,8 @@ class _CardRecurso extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Icon(
-                Icons.open_in_new_rounded,
-                color: url.isEmpty
-                    ? Colors.grey.shade400
-                    : const Color(0xFF5368CE),
+                ativo ? Icons.open_in_new_rounded : Icons.schedule_rounded,
+                color: ativo ? CreditosPage.cor : Colors.grey,
                 size: 20,
               ),
             ],
@@ -349,18 +406,19 @@ class _CardRecurso extends StatelessWidget {
   }
 }
 
-class _PessoaCard extends StatelessWidget {
-  final Map<String, dynamic> pessoa;
+class _ProfessorCard extends StatelessWidget {
+  final Map<String, dynamic> professor;
 
-  const _PessoaCard({
-    required this.pessoa,
+  const _ProfessorCard({
+    required this.professor,
   });
 
   @override
   Widget build(BuildContext context) {
-    final nome = (pessoa['nome'] ?? '').toString();
-    final foto = (pessoa['foto'] ?? '').toString();
-    final detalhe = (pessoa['matéria'] ?? '').toString();
+    final nome = (professor['nome'] ?? '').toString();
+    final foto = (professor['foto'] ?? '').toString();
+    final materia = (professor['matéria'] ?? '').toString();
+    final materias = professor['materias'];
 
     return Container(
       padding: const EdgeInsets.all(18),
@@ -370,32 +428,26 @@ class _PessoaCard extends StatelessWidget {
         border: Border.all(
           color: const Color(0xFFE6EAF3),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.035),
-            blurRadius: 14,
-            offset: const Offset(0, 5),
-          ),
-        ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(60),
-              child: SizedBox(
-                width: 100,
-                height: 100,
-                child: foto.isEmpty
-                    ? _fotoAlternativa()
-                    : Image.asset(
-                        foto,
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) =>
-                            _fotoAlternativa(),
+          ClipOval(
+            child: SizedBox(
+              width: 100,
+              height: 100,
+              child: foto.isEmpty
+                  ? const Icon(
+                      Icons.school_rounded,
+                      size: 46,
+                    )
+                  : Image.asset(
+                      foto,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, error, stack) => const Icon(
+                        Icons.school_rounded,
+                        size: 46,
                       ),
-              ),
+                    ),
             ),
           ),
           const SizedBox(height: 16),
@@ -403,98 +455,57 @@ class _PessoaCard extends StatelessWidget {
             nome,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Color(0xFF202B46),
+              color: CreditosPage.texto,
               fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 10),
-          _materiasWidget(context, detalhe),
-        ],
-      ),
-    );
-  }
-
-  Widget _fotoAlternativa() {
-    return Container(
-      color: const Color(0xFFEDF0F6),
-      alignment: Alignment.center,
-      child: const Icon(
-        Icons.school_rounded,
-        size: 42,
-        color: Color(0xFF5368CE),
-      ),
-    );
-  }
-
-  Widget _materiasWidget(BuildContext context, String detalhe) {
-    final materias = pessoa['materias'];
-
-    if (materias is! List || materias.isEmpty) {
-      return Text(
-        detalhe,
-        style: const TextStyle(
-          color: Color(0xFF64708D),
-          fontSize: 12.5,
-          height: 1.5,
-        ),
-      );
-    }
-
-    return Wrap(
-      spacing: 8,
-      runSpacing: 6,
-      children: materias.map<Widget>((item) {
-        if (item is! Map) {
-          return const SizedBox.shrink();
-        }
-
-        final sigla = (item['sigla'] ?? '').toString();
-        final nomeCompleto =
-            (item['nomeCompleto'] ?? sigla).toString();
-
-        return Tooltip(
-          message: nomeCompleto,
-          waitDuration: const Duration(milliseconds: 300),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(5),
-            onTap: () {
-              showDialog<void>(
-                context: context,
-                builder: (dialogContext) {
-                  return AlertDialog(
-                    title: Text(sigla),
-                    content: Text(nomeCompleto),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.of(dialogContext).pop();
-                        },
-                        child: const Text('Fechar'),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 2,
-                vertical: 4,
-              ),
-              child: Text(
-                sigla,
-                style: const TextStyle(
-                  color: Color(0xFF5368CE),
-                  fontSize: 12.5,
-                  decoration: TextDecoration.underline,
-                  decorationStyle: TextDecorationStyle.dotted,
-                ),
+          if (materias is List && materias.isNotEmpty)
+            Wrap(
+              spacing: 10,
+              runSpacing: 6,
+              children: [
+                for (final item in materias.whereType<Map>())
+                  TextButton(
+                    onPressed: () {
+                      showDialog<void>(
+                        context: context,
+                        builder: (dialogContext) => AlertDialog(
+                          title: Text(
+                            (item['sigla'] ?? '').toString(),
+                          ),
+                          content: Text(
+                            (item['nomeCompleto'] ?? '').toString(),
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.of(dialogContext).pop(),
+                              child: const Text('Fechar'),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    child: Text(
+                      (item['sigla'] ?? '').toString(),
+                    ),
+                  ),
+              ],
+            )
+          else
+            Text(
+              materia,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: CreditosPage.secundario,
+                fontSize: 12.5,
+                height: 1.5,
               ),
             ),
-          ),
-        );
-      }).toList(),
+        ],
+      ),
     );
   }
 }
